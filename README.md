@@ -10,6 +10,11 @@ Install the Xcode Command Line Tools
 ```bash
 xcode-select --install
 ```
+Setup git
+```bash
+git config --global user.name "Birkir Brynjarsson"
+git config --global user.email "*******@gmail.com"
+```
 Install [Homebrew](https://brew.sh/)
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -28,3 +33,4 @@ Install [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
+
