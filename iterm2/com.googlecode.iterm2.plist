@@ -2511,7 +2511,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>546 448 796 486 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>280 441 650 452 0 0 1680 1027 </string>
+	<string>163 441 650 452 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>649 131 650 452 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -3343,6 +3343,8 @@
 		<string>0033</string>
 		<string>0034</string>
 	</array>
+	<key>OnlyWhenMoreTabs</key>
+	<false/>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PointerActions</key>
@@ -3382,6 +3384,8 @@
 	<string>/Users/birkir/.setup/iterm2</string>
 	<key>Print In Black And White</key>
 	<true/>
+	<key>PromptOnQuit</key>
+	<false/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
