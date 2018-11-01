@@ -1,35 +1,45 @@
 # Mac setup
-Tools to automate my setup after clean re-installation of MacOS
+Tools and instructions to speed up and automate my setup after clean re-installation of MacOS
 
 ## Requirements
 Clean installation of MacOS
 
 ## Usage
-Install the Xcode Command Line Tools
+Install the **Xcode Command Line Tools**
 
 ```bash
 xcode-select --install
 ```
-Setup git
+Setup **git**
 ```bash
 git config --global user.name "Birkir Brynjarsson"
 git config --global user.email "*******@gmail.com"
 ```
-Install [Homebrew](https://brew.sh/)
+Install **[Homebrew](https://brew.sh/)**
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-Clone the repository and install from Brewfile
+Clone the repository and install from **Brewfile**
 ```bash
 git clone https://github.com/birkirbrynjarsson/.setup
 cd .setup
 brew bundle
 ```
-Change default shell to Zsh
+With **1password** installed I get my **SSH-keys** from saved documents and move to `~/.ssh` and make sure permissions are correct
+```bash
+chmod 600 ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa.pub
+chmod 700 ~/.ssh
+```
+If the public **SSH-key** has been added to [GitHub](https://github.com/settings/ssh), the connection can be tested
+```bash
+ssh -T git@github.com
+```
+Change default shell to **Zsh**
 ```bash
 chsh -s /bin/zsh
 ```
-Install [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
+Install **[Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)**
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
