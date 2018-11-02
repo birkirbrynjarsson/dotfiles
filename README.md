@@ -25,6 +25,11 @@ git clone https://github.com/birkirbrynjarsson/.setup
 cd .setup
 brew bundle
 ```
+Set preferences for iTerm2
+```bash
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.setup/iterm2"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+```
 With **1password** installed I get my **SSH-keys** from saved documents and move to `~/.ssh` and make sure permissions are correct
 ```bash
 chmod 600 ~/.ssh/id_rsa
@@ -43,4 +48,7 @@ Install **[Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)**
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
-
+Install **powerlevel9** theme
+```bash
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+```
