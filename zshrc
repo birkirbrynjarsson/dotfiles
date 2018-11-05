@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -68,11 +70,13 @@ plugins=(
   common-aliases
   colored-man-pages
   docker
+  extract
   git
   ng
   npm
   nvm
   osx
+  rbenv
   vscode
   zsh-apple-touchbar
   zsh-autosuggestions
@@ -122,3 +126,4 @@ DEFAULT_USER=`whoami`
 # --- PRIVATE CHANGES & SOURCED FILES --- #
 
 source $HOME/.setup/zsh-paths
+source $HOME/.setup/zsh-aliases

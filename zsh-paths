@@ -1,11 +1,6 @@
+#!/usr/bin/env zsh
+
 # Custom dropbox PATH environment
 PATH="$HOME/Dropbox/.bin:$PATH"
-
-# Ruby/rbenv settings
-# From https://gist.github.com/DirtyF/5d2bde5c682101b7b5d90708ad333bf3
-export GEM_HOME=$HOME/.gems
-PATH="$HOME/.gems/bin:$PATH"
-PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
 export PATH
