@@ -52,13 +52,16 @@ Install **powerlevel9** theme
 ```bash
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 ```
-Install zsh-**autosuggestions**, zsh-**completions**, zsh-**history-substring-search**, zsh-**syntax-highlighting** and **warhol**
+Install plugins
+- zsh-**autosuggestions**
+- zsh-**completions**
+- zsh-**history-substring-search**
+- zsh-**syntax-highlighting**
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
 git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://gist.github.com/DirtyF/5d2bde5c682101b7b5d90708ad333bf3 ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/warhol
 ```
 Install Ruby with rbenv and install from Gemfile
 ```bash
