@@ -21,8 +21,8 @@ Install **[Homebrew](https://brew.sh/)**
 ```
 Clone the repository and install from **Brewfile**
 ```bash
-git clone https://github.com/birkirbrynjarsson/.setup
-cd .setup
+git clone https://github.com/birkirbrynjarsson/.setup ~/
+cd ~/.setup
 brew bundle
 ```
 Set preferences for iTerm2
@@ -48,14 +48,31 @@ Install **[Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)**
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
+Source the ZSH profile (optionally restart Terminal/iTerm2 after creating the symlink)
+```bash
+ln -s ~/.setup/zshrc ~/.zshrc
+source ~/.zshrc
+```
 Install **powerlevel9** theme
 ```bash
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 ```
-Install zsh-**autosuggestions**, zsh-**completions**, zsh-**history-substring-search** and zsh-**syntax-highlighting**
+Install plugins
+- zsh-**autosuggestions**
+- zsh-**completions**
+- zsh-**history-substring-search**
+- zsh-**syntax-highlighting**
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
 git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+Install Ruby with rbenv and install from Gemfile
+```bash
+rbenv install 2.5.3
+rbenv global 2.5.3
+gem install bundler
+cd ~/.setup
+bundle install
 ```
