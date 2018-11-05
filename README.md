@@ -48,6 +48,11 @@ Install **[Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)**
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
+Source the ZSH profile (optionally restart Terminal/iTerm2 after creating the symlink)
+```bash
+ln -s ~/.setup/zshrc ~/.zshrc
+source ~/.zshrc
+```
 Install **powerlevel9** theme
 ```bash
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
