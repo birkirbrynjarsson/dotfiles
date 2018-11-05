@@ -19,7 +19,7 @@ Install **[Homebrew](https://brew.sh/)**
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-Clone the repository and install from **Brewfile**
+Clone the repository to your $HOME folder and install from **Brewfile**
 ```bash
 git clone https://github.com/birkirbrynjarsson/.setup ~/
 cd ~/.setup
