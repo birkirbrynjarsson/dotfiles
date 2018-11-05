@@ -1,0 +1,20 @@
+GEM
+  specs:
+    clocale (0.0.4)
+    colorls (1.1.1)
+      clocale
+      filesize
+      manpages
+      rainbow
+    filesize (0.2.0)
+    manpages (0.6.1)
+    rainbow (3.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  colorls
+
+BUNDLED WITH
+   1.17.1
