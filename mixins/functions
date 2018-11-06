@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-# Steamlink Twitch
+# Streamlink Twitch
 twitch(){
     streamlink --twitch-oauth-token atvh3h3qoy1sfuhhx8366ao47m6grh twitch.tv/$1 $2
 }

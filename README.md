@@ -79,3 +79,7 @@ Install Python packages
 ```bash
 pip3 install pygments
 ```
+Node setup
+```bash
+mkdir ~/.nvm
+```

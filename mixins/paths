@@ -4,3 +4,7 @@
 PATH="$HOME/Dropbox/.bin:$PATH"
 
 export PATH
+
+# NVM Setup
+export NVM_DIR="$HOME/.nvm"
+source $(brew --prefix nvm)/nvm.sh
