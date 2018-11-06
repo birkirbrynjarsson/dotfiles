@@ -85,4 +85,5 @@ mkdir ~/.nvm
 nvm install 8.12.0
 nvm install 10.13.0
 nvm alias default 8.12.0
+nvm use default
 ```
