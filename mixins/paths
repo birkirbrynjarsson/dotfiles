@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+
+# Custom dropbox PATH environment
+PATH="$HOME/Dropbox/.bin:$PATH"
+
+export PATH

@@ -123,9 +123,13 @@ source $ZSH/oh-my-zsh.sh
 
 
 
-DEFAULT_USER=`whoami`
+
 
 # --- PRIVATE CHANGES & SOURCED FILES --- #
 
-source $HOME/.setup/zsh-paths
-source $HOME/.setup/zsh-aliases
+DEFAULT_USER=`whoami`
+
+ZSHRC_PATH=$(dirname "$(readlink "${(%):-%N}")")
+
+source $ZSHRC_PATH/mixins/paths
+source $ZSHRC_PATH/mixins/aliases

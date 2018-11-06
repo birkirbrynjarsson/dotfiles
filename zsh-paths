@@ -1,9 +1,0 @@
-#!/usr/bin/env zsh
-
-# Ensure Homebrew installations (e.g., Python) will take precedence over stock macOS binaries.
-PATH="/usr/local/bin:$PATH"
-
-# Custom dropbox PATH environment
-PATH="$HOME/Dropbox/.bin:$PATH"
-
-export PATH
