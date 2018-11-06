@@ -69,6 +69,7 @@ plugins=(
   brew
   common-aliases
   colored-man-pages
+  colorize
   docker
   extract
   git
@@ -78,6 +79,7 @@ plugins=(
   osx
   rbenv
   vscode
+  web-search
   zsh-apple-touchbar
   zsh-autosuggestions
   zsh-completions

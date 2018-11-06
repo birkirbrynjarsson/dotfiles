@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     clocale (0.0.4)
     colorls (1.1.1)

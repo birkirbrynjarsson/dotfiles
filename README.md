@@ -68,11 +68,14 @@ git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugi
 git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
-Install Ruby with rbenv and install from Gemfile
+Install Ruby packages
 ```bash
 rbenv install 2.5.3
 rbenv global 2.5.3
 gem install bundler
-cd ~/.setup
-bundle install
+gem install colorls
+```
+Install Python packages
+```bash
+pip3 install pygments
 ```
