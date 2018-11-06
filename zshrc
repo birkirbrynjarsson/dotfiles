@@ -123,9 +123,10 @@ source $ZSH/oh-my-zsh.sh
 
 
 
-
-
 # --- PRIVATE CHANGES & SOURCED FILES --- #
+
+# Set Default Editor (change 'Nano' to the editor of your choice)
+export EDITOR=/usr/bin/nano
 
 DEFAULT_USER=`whoami`
 
