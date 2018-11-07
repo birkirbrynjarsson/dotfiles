@@ -6,13 +6,6 @@ alias lcc='colorls --gs --sd --tree'
 # Folder shortcuts
 alias dropbox='cd $HOME/Dropbox/'
 alias gitbox='cd $HOME/Gitbox/'         # Where I store downloaded github repos
-alias agr5='cd $HOME/Gitbox/agr/agr5'
-alias agr6='cd $HOME/Gitbox/agr/agr6'
-
-# Server shortcuts
-alias birkir.is='ssh -p 7773 birkir@178.62.38.116'
-alias wp.is='ssh -p 7773 birkir@178.62.41.182'
-alias agrvbox='ssh vboxadmin@192.168.101.15'
 
 # Aliases from https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
 
