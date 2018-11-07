@@ -5,7 +5,7 @@ alias lcc='colorls --gs --sd --tree'
 
 # Folder shortcuts
 alias dropbox='cd $HOME/Dropbox/'
-alias gitbox='cd $HOME/Gitbox/'
+alias gitbox='cd $HOME/Gitbox/'         # Where I store downloaded github repos
 alias agr5='cd $HOME/Gitbox/agr/agr5'
 alias agr6='cd $HOME/Gitbox/agr/agr6'
 
@@ -121,3 +121,27 @@ ii() {
 #   ---------------------------------------
 
 httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grabs headers from web page
+
+# Aliases from https://justin.abrah.ms/dotfiles/zsh.html
+
+alias ping='ping -c 5'      # Pings with 5 packets, not unlimited
+alias df='df -h'            # Disk free, in gigabytes, not bytes
+alias du='du -h -c'         # Calculate total disk usage for a folder
+
+# curl for useragents
+alias iecurl="curl -H \"User-Agent: Mozilla/5.0 (Windows; U; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.50727)\""
+alias ffcurl="curl -H \"User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.8) Gecko/2009032609 Firefox/3.0.0 (.NET CLR 3.5.30729)\""
+
+# Dictionary search, prefix ^ to get only words starting letters. ex: ^wh
+dict() {
+    grep "$@" /usr/share/dict/words
+}
+
+ghget () {
+    # input: rails/rails
+    USER=$(echo $@ | tr "/" " " | awk '{print $1}')
+    REPO=$(echo $@ | tr "/" " " | awk '{print $2}')
+    mcd "$HOME/Gitbox/$USER" && \
+    hub clone $@ && \
+    cd $REPO
+}
