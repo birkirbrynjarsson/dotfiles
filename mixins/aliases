@@ -43,6 +43,7 @@ alias path='echo -e ${PATH//:/\\n}'
 
 
 
+
 # Aliases from https://gist.github.com/natelandau/10654137
 
 alias c='clear'                            # c:            Clear terminal display
@@ -114,6 +115,9 @@ ii() {
 #   ---------------------------------------
 
 httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grabs headers from web page
+
+
+
 
 # Aliases from https://justin.abrah.ms/dotfiles/zsh.html
 
