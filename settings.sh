@@ -1,3 +1,14 @@
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" "
+
+# Customize the Dock
 defaults write com.apple.dock tilesize -int 48
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock static-only -bool true
