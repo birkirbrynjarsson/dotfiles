@@ -2,6 +2,7 @@
 
 alias lc='colorls --gs --sd -lA'
 alias lcc='colorls --gs --sd --tree'
+alias .='pwd'
 
 # Folder shortcuts
 alias dropbox='cd $HOME/Dropbox/'
@@ -93,7 +94,7 @@ alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Flush Directory Service cache
-alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;echo "✌️ DNS flushed"'
 
 #   ii:  display useful host related informaton
 #   -------------------------------------------------------------------
