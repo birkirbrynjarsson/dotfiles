@@ -142,10 +142,20 @@ nvm alias default 8.12.0
 nvm use default
 ```
 
+
 ## Post installation cleanup
 
 Cleanup Brew installations
 
 ```bash
 bubu
+```
+
+
+## Dropbox Desktop sync
+
+Sync desktop between workstations
+
+```bash
+ln -s ~/Desktop ~/Dropbox/
 ```
