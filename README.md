@@ -7,10 +7,10 @@ If you want to make your own setup based on this I recommend the following steps
 
 - Fork the repository
 - Edit the Brewfile
-  - Some apps however are required for later steps (ex. cask-fonts, font-meslo-nerd-font, iTerm2, nvm, python, rbenv)
+  - Some apps however are required for later steps (e.g. cask-fonts, font-meslo-nerd-font, iTerm2, nvm, python, rbenv)
 - Edit settings.sh to your preference
 - Edit mixin/aliases
-  - PS. before you start adding your own aliases I recommend running `alias` and looking at what's there, a lot of stuffs comes with the Oh-My-Zsh plugins.
+  - PS. before you start adding your own aliases I recommend running `alias` and looking at what's there, a lot of stuff comes with the Oh-My-Zsh plugins.
 - Follow the setup guide
 
 
@@ -18,8 +18,9 @@ If you want to make your own setup based on this I recommend the following steps
 Clean installation of MacOS, preferably _Mojave_ as that's what it has been tested on.
 
 
-## Manual setup
-I've opted out of creating a script to automate the whole setup process. I enjoy going through all the steps as well as maintaining this documentation which is enforced instead.
+# Manual Setup
+There's no single script that automates the whole process.  
+I do enjoy going through the steps as well as maintaining this documentation.
 
 Install the **Xcode Command Line Tools**
 
@@ -27,7 +28,7 @@ Install the **Xcode Command Line Tools**
 xcode-select --install
 ```
 
-### Configure Git
+## Configure Git
 Check out [creating a personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
 
 ```bash
@@ -41,7 +42,17 @@ git config --global core.editor "code -w"
 git config --global color.ui true
 ```
 
-### Install Applications
+## Clone the repository
+Clone the repository and hide it in Finder with `chflags`
+```bash
+cd ~
+git clone https://github.com/birkirbrynjarsson/dotfiles
+chflags hidden dotfiles
+cd ~/dotfiles
+```
+
+
+## Install Applications
 
 Install [**Homebrew**](https://brew.sh/)
 
@@ -50,17 +61,13 @@ Install [**Homebrew**](https://brew.sh/)
 ```
 
 
-Clone the repository to `~/` and install applications from **Brewfile**
+Install applications from **Brewfile**
 
 ```bash
-cd ~
-git clone https://github.com/birkirbrynjarsson/dotfiles
-chflags hidden dotfiles
-cd ~/dotfiles
 brew bundle
 ```
 
-### SSH keys
+## SSH keys
 
 With **1password** installed I get my **SSH-keys** from saved documents and move to `~/.ssh` and make sure permissions are correct
 
@@ -76,7 +83,7 @@ If the public **SSH-key** has been added to [GitHub](https://github.com/settings
 ssh -T git@github.com
 ```
 
-### MacOS system preferences
+## MacOS system preferences
 
 Run `settings.sh` to apply custom preferences for Finder, Menu bar, Dock etc.
 
@@ -87,7 +94,7 @@ chmod +x settings.sh
 ```
 
 
-### Awesome terminal with iTerm2, Zsh & Oh-My-Zsh
+## Make the shell awesome with iTerm2, Zsh & Oh-My-Zsh
 
 Set preferences for iTerm2
 
@@ -160,11 +167,16 @@ npm install -g @angular/cli
 ```
 
 
-## Visual Studio Code settings
+### Visual Studio Code settings
 I sync plugins and settings to Visual Studio Code with the [*Settings sync*](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) plugin. It requires a GitHub API Token with gist access. Check out the [configuration instructions](https://shanalikhan.github.io/2016/07/31/Visual-Studio-code-sync-setting-edit-manually.html)
 
+Take a look at which plugins I use with:
 
-## Post installation cleanup
+```bash
+curl https://gist.githubusercontent.com/birkirbrynjarsson/8b47741d950a86e46222eb8bfc293a9a/raw/4f7d7b697c724a4abdb36cceb75fb5ffa00944a2/extensions.json | grep name
+```
+
+### Post installation cleanup
 
 Cleanup Brew installations
 
@@ -173,7 +185,7 @@ bubu
 ```
 
 
-## Dropbox Desktop sync
+### Dropbox Desktop sync
 
 Sync your Desktop between workstations
 
@@ -182,7 +194,7 @@ ln -s ~/Desktop ~/Dropbox/
 ```
 
 
-## Setup Shpotify
+### Setup Shpotify
 
 The `spotify` cli requires configuration.
 Add CLIENT_ID and CLIENT_SECRET to `~/.shpotify.cfg`, get this information by [creating an 'application'](https://developer.spotify.com/my-applications/#!/applications/create).
@@ -191,6 +203,16 @@ Add CLIENT_ID and CLIENT_SECRET to `~/.shpotify.cfg`, get this information by [c
 echo 'CLIENT_ID="urCl13nt1D"' > ~/.shpotify.cfg
 echo 'CLIENT_SECRET="urCl13nt53cret"' >> ~/.shpotify.cfg
 ```
+
+### Other preferences and private files
+I keep some application preferences in a [private branch](https://24ways.org/2013/keeping-parts-of-your-codebase-private-on-github/) of this repository and move them into `~/Library/Preferences/` after installing the apps. 
+These files might contain Software Licenses or other private data.  
+The `.shpotify.cfg`, *iStat Menus* settings and *Bartender.plist* are examples of such private files.
+
+Another tool that might be worth taking a look at is [mackup](https://github.com/lra/mackup) which:
+- Back ups your application settings in a safe directory (e.g. Dropbox)
+- Syncs your application settings among all your workstations
+- Restores your configuration on any fresh install in one command line
 
 ## Credits
 Many thanks to the [dotfiles community](http://dotfiles.github.io/) and creatores there. My aliases, settings and more are sourced from many of repositories found there.
