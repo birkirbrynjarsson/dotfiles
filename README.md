@@ -39,8 +39,10 @@ Install [**Homebrew**](https://brew.sh/)
 Clone the repository to `~/` and install applications from **Brewfile**
 
 ```bash
-git clone https://github.com/birkirbrynjarsson/.setup ~/
-cd ~/.setup
+cd ~
+git clone https://github.com/birkirbrynjarsson/dotfiles
+chflags hidden dotfiles
+cd ~/dotfiles
 brew bundle
 ```
 
@@ -65,7 +67,7 @@ ssh -T git@github.com
 Run `settings.sh` to apply custom preferences for Finder, Menu bar, Dock etc.
 
 ```bash
-cd ~/.setup
+cd ~/dotfiles
 chmod +x settings.sh
 ./settings.sh
 ```
@@ -76,7 +78,7 @@ chmod +x settings.sh
 Set preferences for iTerm2
 
 ```bash
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.setup/iterm2"
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 ```
 
@@ -127,7 +129,7 @@ gem install colorls
 Source the ZSH profile (optionally restart Terminal/iTerm2 after creating the symlink)
 
 ```bash
-ln -s ~/.setup/zshrc ~/.zshrc
+ln -s ~/dotfiles/.zshrc ~/.zshrc
 source ~/.zshrc
 ```
 
