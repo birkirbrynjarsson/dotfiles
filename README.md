@@ -159,6 +159,10 @@ nvm use default
 ```
 
 
+## Visual Studio Code settings
+I sync plugins and settings to Visual Studio Code with the [*Settings sync*](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) plugin. It requires a GitHub API Token with gist access. Check out the [configuration instructions](https://shanalikhan.github.io/2016/07/31/Visual-Studio-code-sync-setting-edit-manually.html)
+
+
 ## Post installation cleanup
 
 Cleanup Brew installations
