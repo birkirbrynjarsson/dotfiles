@@ -1,11 +1,11 @@
-# Mac setup
+# Mac setup and dotfiles
 Tools and instructions to speed up and automate my setup after clean re-installation of MacOS
 
 ## Requirements
-Clean installation of MacOS, preferably Mojave
+Clean installation of MacOS, preferably _Mojave_ as that's what it has been tested on.
 
 ## Manual setup
-I've decided to not create a script to automate the setup process as I 
+I've opted out of creating a script to automate the whole setup process. I enjoy going through all the steps as well as maintaining this documentation which is enforced instead.
 
 Install the **Xcode Command Line Tools**
 
@@ -13,18 +13,21 @@ Install the **Xcode Command Line Tools**
 xcode-select --install
 ```
 
-### Git setup
-Setup **git**
+### Configure Git
+Check out [creating a personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
 
 ```bash
 git config --global user.name "Birkir Brynjarsson"  
 git config --global user.email "*******@gmail.com"  
-git config --global github.user "birkirbrynjarsson"
+git config --global github.user birkirbrynjarsson
+git config --global github.token your_token_here
 git config --global core.excludesfile ~/.gitignore
 echo .DS_Store >> ~/.gitignore
+git config --global core.editor "code -w"
+git config --global color.ui true
 ```
 
-### Applications
+### Install Applications
 
 Install [**Homebrew**](https://brew.sh/)
 
@@ -33,7 +36,7 @@ Install [**Homebrew**](https://brew.sh/)
 ```
 
 
-Clone the repository to your `~/` and install applications from **Brewfile**
+Clone the repository to `~/` and install applications from **Brewfile**
 
 ```bash
 git clone https://github.com/birkirbrynjarsson/.setup ~/
@@ -59,7 +62,7 @@ ssh -T git@github.com
 
 ### MacOS system preferences
 
-Run `settings.sh` to write settings for Finder, Dock etc to `~/Library/Preferences`
+Run `settings.sh` to apply custom preferences for Finder, Menu bar, Dock etc.
 
 ```bash
 cd ~/.setup
