@@ -1,8 +1,22 @@
 # Mac setup and dotfiles
-Tools and instructions to speed up and automate my setup after clean re-installation of MacOS
+Tools and instructions to speed up and automate my setup after clean re-installation of MacOS.
+
+
+## Make your own
+If you want to make your own setup based on this I recommend the following steps:
+
+- Fork the repository
+- Edit the Brewfile
+  - Some apps however are required for later steps (ex. cask-fonts, font-meslo-nerd-font, iTerm2, nvm, python, rbenv)
+- Edit settings.sh to your preference
+- Edit mixin/aliases
+  - PS. before you start adding your own aliases I recommend running `alias` and looking at what's there, a lot of stuffs comes with the Oh-My-Zsh plugins.
+- Follow the setup guide
+
 
 ## Requirements
 Clean installation of MacOS, preferably _Mojave_ as that's what it has been tested on.
+
 
 ## Manual setup
 I've opted out of creating a script to automate the whole setup process. I enjoy going through all the steps as well as maintaining this documentation which is enforced instead.
@@ -156,8 +170,18 @@ bubu
 
 ## Dropbox Desktop sync
 
-Sync desktop between workstations
+Sync your Desktop between workstations
 
 ```bash
 ln -s ~/Desktop ~/Dropbox/
 ```
+
+
+## Setup Shpotify
+
+The `spotify` cli requires configuration.
+Add CLIENT_ID and CLIENT_SECRET to `~/.shpotify.cfg`, get this information by [creating an 'application'](https://developer.spotify.com/my-applications/#!/applications/create).
+
+```bash
+echo 'CLIENT_ID="urCl13nt1D"' > ~/.shpotify.cfg
+echo 'CLIENT_SECRET="urCl13nt53cret"' >> ~/.shpotify.cfg
