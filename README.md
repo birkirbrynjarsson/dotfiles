@@ -185,7 +185,7 @@ Add CLIENT_ID and CLIENT_SECRET to `~/.shpotify.cfg`, get this information by [c
 ```bash
 echo 'CLIENT_ID="urCl13nt1D"' > ~/.shpotify.cfg
 echo 'CLIENT_SECRET="urCl13nt53cret"' >> ~/.shpotify.cfg
-
+```
 
 ## Credits
 Many thanks to the [dotfiles community](http://dotfiles.github.io/) and creatores there. My aliases, settings and more are sourced from many of repositories found there.
