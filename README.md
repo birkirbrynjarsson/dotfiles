@@ -35,9 +35,13 @@ Check out [creating a personal access token](https://help.github.com/articles/cr
 git config --global user.name "Birkir Brynjarsson"  
 git config --global user.email "*******@gmail.com"  
 git config --global github.user birkirbrynjarsson
-git config --global github.token your_token_here
 git config --global core.excludesfile ~/.gitignore
 echo .DS_Store >> ~/.gitignore
+```
+Other configurations ~~I specify~~
+
+```bash
+git config --global github.token your_token_here
 git config --global core.editor "code -w"
 git config --global color.ui true
 ```
