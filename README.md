@@ -133,7 +133,7 @@ git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
 ```
 
-Install **Pygments** for colorized `cat` with `ccat` which from the [_colorize_](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/colorize) plugin.
+Install **Pygments** for colorized `cat` with `ccat` from the [_colorize_](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/colorize) plugin.
 
 ```bash
 pip3 install pygments
@@ -227,4 +227,4 @@ bubu
 ```
 
 ## Credits
-Many thanks to the [dotfiles community](http://dotfiles.github.io/) and creatores there. My aliases, settings and more are sourced from many of repositories found there.
+Many thanks to the [dotfiles community](http://dotfiles.github.io/) and creatores there. My aliases, settings and more are sourced from many of the repositories found there.
