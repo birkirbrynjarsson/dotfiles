@@ -1,1 +1,10 @@
 #!/usr/bin/env zsh
+
+yt-lucky(){
+    URL=$(youtube-dl -j ytsearch1:$1 | jq '.webpage_url' | sed -e 's/^"//' -e 's/"$//')
+    if [[ -n "$URL" ]]; then
+        streamlink $URL best
+    else
+        echo "No URL found!"
+    fi
+}
