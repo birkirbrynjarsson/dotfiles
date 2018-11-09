@@ -132,6 +132,6 @@ DEFAULT_USER=`whoami`
 
 ZSHRC_PATH=$(dirname "$(readlink "${(%):-%N}")")
 
-source $HOME/$ZSHRC_PATH/mixins/paths
-source $HOME/$ZSHRC_PATH/mixins/aliases
-source $HOME/$ZSHRC_PATH/mixins/functions
+source $ZSHRC_PATH/mixins/paths
+source $ZSHRC_PATH/mixins/aliases
+source $ZSHRC_PATH/mixins/functions
