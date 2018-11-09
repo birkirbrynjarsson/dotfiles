@@ -118,10 +118,7 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 
 Install custom zsh-plugins
 
-- [zsh-**autosuggestions**](https://github.com/zsh-users/zsh-autosuggestions)
-- [zsh-**completions**](https://github.com/zsh-users/zsh-completions)
-- [zsh-**history-substring-search**](https://github.com/zsh-users/zsh-history-substring-search)
-- [zsh-**syntax-highlighting**](https://github.com/zsh-users/zsh-syntax-highlighting)
+[zsh-**autosuggestions**](https://github.com/zsh-users/zsh-autosuggestions), [zsh-**completions**](https://github.com/zsh-users/zsh-completions), [zsh-**history-substring-search**](https://github.com/zsh-users/zsh-history-substring-search) and [zsh-**syntax-highlighting**](https://github.com/zsh-users/zsh-syntax-highlighting)
 
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
