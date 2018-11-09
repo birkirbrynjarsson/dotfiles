@@ -200,7 +200,9 @@ ln -s ~/Desktop ~/Dropbox/
 ```
 
 
-### Setup Shpotify
+## Other preferences and private files
+
+### Spotify CLI
 
 The `spotify` cli requires configuration.
 Add CLIENT_ID and CLIENT_SECRET to `~/.shpotify.cfg`, get this information by [creating an 'application'](https://developer.spotify.com/my-applications/#!/applications/create).
@@ -210,7 +212,8 @@ echo 'CLIENT_ID="urCl13nt1D"' > ~/.shpotify.cfg
 echo 'CLIENT_SECRET="urCl13nt53cret"' >> ~/.shpotify.cfg
 ```
 
-### Other preferences and private files
+### Private branch or Mackup
+
 I keep some application preferences in a [private branch](https://24ways.org/2013/keeping-parts-of-your-codebase-private-on-github/) of this repository and move them into `~/Library/Preferences/` after installing the apps. 
 These files might contain Software Licenses or other private data.  
 The `.shpotify.cfg`, *iStat Menus* settings and *Bartender.plist* are examples of such private files.
@@ -220,7 +223,7 @@ Another tool that might be worth taking a look at is [mackup](https://github.com
 - Syncs your application settings among all your workstations
 - Restores your configuration on any fresh install in one command line
 
-If you try out mackup, do create a `.mackup.cfg` and explicitly list the applications you want it used with. Mackup stores preferences in a cloud service (e.g. Dropbox) and symlinks everything from there, so be cautious.
+If you try out mackup, do create a `.mackup.cfg` and explicitly list the applications you want it used with. Mackup stores preferences in a cloud service (e.g. Dropbox) and symlinks everything from there, so be cautious and dont just run `mackup backup` unless you're sure.
 
 
 ## Credits
