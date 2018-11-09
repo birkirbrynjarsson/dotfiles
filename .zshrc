@@ -134,3 +134,4 @@ ZSHRC_PATH=$(dirname "$(readlink "${(%):-%N}")")
 
 source $HOME/$ZSHRC_PATH/mixins/paths
 source $HOME/$ZSHRC_PATH/mixins/aliases
+source $HOME/$ZSHRC_PATH/mixins/functions
