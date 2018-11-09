@@ -165,6 +165,7 @@ nvm install 10.13.0
 nvm alias default 8.12.0
 nvm use default
 npm install -g @angular/cli
+npm install -g fb-messenger-cli
 ```
 
 
