@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+alias zshreload='source ~/.zshrc'
+
 alias lc='colorls --gs --sd -lA'
 alias lcc='colorls --gs --sd --tree'
 alias .='pwd'
