@@ -159,7 +159,7 @@ ln -s ~/dotfiles/.zshrc ~/
 source ~/.zshrc
 ```
 
-### Node
+## Node
 Install Node with nvm and global npm packages
 
 ```bash
@@ -173,7 +173,7 @@ npm install -g fb-messenger-cli
 ```
 
 
-### Visual Studio Code settings
+## Visual Studio Code settings
 I sync plugins and settings to Visual Studio Code with the [*Settings sync*](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) plugin. It requires a GitHub API Token with gist access. Check out the [configuration instructions](https://shanalikhan.github.io/2016/07/31/Visual-Studio-code-sync-setting-edit-manually.html)
 
 Take a look at which plugins I use with:
@@ -182,16 +182,8 @@ Take a look at which plugins I use with:
 curl https://gist.githubusercontent.com/birkirbrynjarsson/8b47741d950a86e46222eb8bfc293a9a/raw/4f7d7b697c724a4abdb36cceb75fb5ffa00944a2/extensions.json | grep name
 ```
 
-### Post installation cleanup
 
-Cleanup Brew installations
-
-```bash
-bubu
-```
-
-
-### Dropbox Desktop sync
+## Dropbox Desktop sync
 
 Sync your Desktop between workstations
 
@@ -225,6 +217,14 @@ Another tool that might be worth taking a look at is [mackup](https://github.com
 
 If you try out mackup, do create a `.mackup.cfg` and explicitly list the applications you want it used with. Mackup stores preferences in a cloud service (e.g. Dropbox) and symlinks everything from there, so be cautious and dont just run `mackup backup` unless you're sure.
 
+
+## Post installation cleanup
+
+Cleanup Brew installations
+
+```bash
+bubu
+```
 
 ## Credits
 Many thanks to the [dotfiles community](http://dotfiles.github.io/) and creatores there. My aliases, settings and more are sourced from many of repositories found there.
