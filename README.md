@@ -1,26 +1,26 @@
 # Mac setup and dotfiles
-Tools and instructions to speed up and automate my setup after clean re-installation of MacOS.
+Tools and instructions to speed up and automate my setup and configurations after clean re-installation of MacOS.
+
+
+## Requirements
+Clean installation of MacOS, preferably _Mojave_ as that's what this setup has been tested on.
 
 
 ## Make your own
-If you want to make your own setup based on this I recommend the following steps:
+If you want to make your own setup based on this one I recommend the following steps:
 
 - Fork the repository
 - Edit the Brewfile
   - Some apps however are required for later steps (e.g. cask-fonts, font-meslo-nerd-font, iTerm2, nvm, python, rbenv)
 - Edit settings.sh to your preference
 - Edit mixin/aliases
-  - PS. before you start adding your own aliases I recommend running `alias` and looking at what's there, a lot of stuff comes with the Oh-My-Zsh plugins.
-- Follow the setup guide
-
-
-## Requirements
-Clean installation of MacOS, preferably _Mojave_ as that's what it has been tested on.
+  - PS. before you start adding your own aliases I recommend running `alias` and looking at what is already there, a lot of stuff comes with the Oh-My-Zsh plugins.
+- Follow the manual setup guide
 
 
 # Manual Setup
-There's no single script that automates the whole process.  
-I do enjoy going through the steps as well as maintaining this documentation.
+~~Unfortunately~~ it's a manual process, there's no single script that automates everything.  
+However that's all cool as I enjoy going through the steps as well as maintaining this documentation.
 
 Install the **Xcode Command Line Tools**
 
@@ -44,6 +44,7 @@ git config --global color.ui true
 
 ## Clone the repository
 Clone the repository and hide it in Finder with `chflags`
+
 ```bash
 cd ~
 git clone https://github.com/birkirbrynjarsson/dotfiles
@@ -129,7 +130,7 @@ git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
 ```
 
-Install **Pygments** for colorized `cat` with `ccat`
+Install **Pygments** for colorized `cat` with `ccat` which from the [_colorize_](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/colorize) plugin.
 
 ```bash
 pip3 install pygments
@@ -150,12 +151,12 @@ gem install colorls
 Source the ZSH profile (optionally restart Terminal/iTerm2 after creating the symlink)
 
 ```bash
-ln -s ~/dotfiles/.zshrc ~/.zshrc
+ln -s ~/dotfiles/.zshrc ~/
 source ~/.zshrc
 ```
 
 ### Node
-Node setup
+Install Node with nvm and global npm packages
 
 ```bash
 mkdir ~/.nvm
