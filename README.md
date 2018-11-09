@@ -97,6 +97,8 @@ chmod +x settings.sh
 
 ## Make the shell awesome with iTerm2, Zsh & Oh-My-Zsh
 
+![iTerm2 Screenshot](https://i.imgur.com/kgrwG9q.png "iTerm2 after customization")
+
 Set preferences for iTerm2
 
 ```bash
@@ -148,6 +150,7 @@ gem install colorls
 Source the ZSH profile (optionally restart Terminal/iTerm2 after creating the symlink)
 
 ```bash
+rm ~/.zshrc
 ln -s ~/dotfiles/.zshrc ~/
 source ~/.zshrc
 ```
@@ -212,6 +215,9 @@ Another tool that might be worth taking a look at is [mackup](https://github.com
 - Back ups your application settings in a safe directory (e.g. Dropbox)
 - Syncs your application settings among all your workstations
 - Restores your configuration on any fresh install in one command line
+
+If you try out mackup, do create a `.mackup.cfg` and explicitly list the applications you want it used with. Mackup stores preferences in a cloud service (e.g. Dropbox) and symlinks everything from there, so be cautious.
+
 
 ## Credits
 Many thanks to the [dotfiles community](http://dotfiles.github.io/) and creatores there. My aliases, settings and more are sourced from many of repositories found there.
