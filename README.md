@@ -217,6 +217,22 @@ Another tool that might be worth taking a look at is [mackup](https://github.com
 
 If you try out mackup, do create a `.mackup.cfg` and explicitly list the applications you want it used with. Mackup stores preferences in a cloud service (e.g. Dropbox) and symlinks everything from there, so be cautious and dont just run `mackup backup` unless you're sure.
 
+### Syncing with mackup
+
+Symlink the mackup config and custom configurations to ~/
+
+```bash
+cd ~/dotfiles
+ln -s .mackup.cfg ~/
+ln -s .mackup ~/
+```
+
+Restore from mackup, given that the files have been synced with dropbox where the preference files are stored: `~/Dropbox/Mackup/`
+
+```bash
+cd ~
+mackup restore
+```
 
 ## Post installation cleanup
 
