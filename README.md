@@ -69,6 +69,7 @@ Install [**Homebrew**](https://brew.sh/)
 Install applications from **Brewfile**
 
 ```bash
+cd ~/dotfiles
 brew bundle
 ```
 
