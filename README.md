@@ -161,7 +161,7 @@ source ~/.zshrc
 ```
 
 ## Node
-Install Node with nvm and global npm packages
+Setup Node with nvm and install global packages
 
 ```bash
 mkdir ~/.nvm
