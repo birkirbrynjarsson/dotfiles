@@ -235,7 +235,7 @@ cp ~/dotfiles/.mackup.cfg ~/
 cp -R ~/dotfiles/.mackup ~/
 ```
 
-Restore from mackup, given that the files have been synced with dropbox where the preference files are stored: `~/Dropbox/Mackup/`
+Restore from mackup, given that the files have been synced with dropbox where the preference files are stored (`~/Dropbox/Mackup/`) after running `mackup backup` initially.
 
 ```bash
 cd ~
