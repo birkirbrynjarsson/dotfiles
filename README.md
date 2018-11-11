@@ -134,22 +134,6 @@ git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
 ```
 
-Install **Pygments** for colorized `cat` with `ccat` from the [_colorize_](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/colorize) plugin.
-
-```bash
-pip3 install pygments
-```
-
-Install Ruby and `colorls` for colorful `ls` with icons. Aliased to `lc` and `lcc`
-
-```bash
-rbenv install 2.5.3
-rbenv global 2.5.3
-gem install bundler
-gem install colorls
-```
-
-
 ### Zsh Profile
 
 Source the ZSH profile (optionally restart Terminal/iTerm2 after creating the symlink)
@@ -159,6 +143,30 @@ rm ~/.zshrc
 ln -s ~/dotfiles/.zshrc ~/
 source ~/.zshrc
 ```
+
+Install **Pygments** for colorized `cat` with `ccat` from the [_colorize_](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/colorize) plugin.
+
+```bash
+pip3 install pygments
+```
+
+
+### Ruby
+
+Install Ruby and `colorls` for colorful `ls` with icons. Aliased to `lc` and `lcc`
+
+```bash
+rbenv install 2.5.3
+rbenv global 2.5.3
+```
+
+Restart your terminal before installing gems
+
+```bash
+gem install bundler
+gem install colorls
+```
+
 
 ## Node
 Setup Node with nvm and install global packages
@@ -223,9 +231,8 @@ If you try out mackup, do create a `.mackup.cfg` and explicitly list the applica
 Symlink the mackup config and custom configurations to ~/
 
 ```bash
-cd ~/dotfiles
-ln -s .mackup.cfg ~/
-ln -s .mackup ~/
+cp ~/dotfiles/.mackup.cfg ~/
+cp -R ~/dotfiles/.mackup ~/
 ```
 
 Restore from mackup, given that the files have been synced with dropbox where the preference files are stored: `~/Dropbox/Mackup/`
