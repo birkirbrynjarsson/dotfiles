@@ -251,4 +251,4 @@ bubu
 ```
 
 ## Credits
-Many thanks to the [dotfiles community](http://dotfiles.github.io/) and creatores there. My aliases, settings and more are sourced from many of the repositories found there.
+Many thanks to the [dotfiles community](http://dotfiles.github.io/) and the creators/contributors there. My aliases, settings and more are sourced from many of the repositories which can be found there.
