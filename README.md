@@ -29,7 +29,6 @@ xcode-select --install
 ```
 
 ## Configure Git
-Check out [creating a personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
 
 ```bash
 git config --global user.name "Birkir Brynjarsson"  
