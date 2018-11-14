@@ -228,14 +228,14 @@ If you try out mackup, do create a `.mackup.cfg` and explicitly list the applica
 
 ### Syncing with mackup
 
-Symlink the mackup config and custom configurations to ~/
+Copy (symlinking didn't work) the mackup config and custom configurations to `~/`
 
 ```bash
 cp ~/dotfiles/.mackup.cfg ~/
 cp -R ~/dotfiles/.mackup ~/
 ```
 
-Restore from mackup, given that the files have been synced with dropbox where the preference files are stored (`~/Dropbox/Mackup/`) after running `mackup backup` initially.
+Restore from mackup, given that the files have been synced with dropbox or wherever your preference files are stored (`~/Dropbox/Mackup/`) after initially running `mackup backup` on a previously configured/setup system.
 
 ```bash
 cd ~
