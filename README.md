@@ -12,7 +12,7 @@ If you want to make your own setup based on this one I recommend the following s
 - Fork the repository
 - Edit the Brewfile
   - Some apps however are required for later steps (e.g. cask-fonts, font-meslo-nerd-font, iTerm2, nvm, python, rbenv)
-- Edit settings.sh to your preference
+- Edit settings.sh to suit your own preferences
 - Edit mixin/aliases
   - PS. before you start adding your own aliases I recommend running `alias` and looking at what is already there, a lot of stuff comes with the Oh-My-Zsh plugins.
 - Follow the manual setup guide
@@ -184,10 +184,11 @@ Install global packages from `npmfile`
 xargs -L1 npm i -g < npmfile
 ```
 
+
 ## Visual Studio Code settings
 I sync plugins and settings to Visual Studio Code with the [*Settings sync*](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) plugin. It requires a GitHub API Token with gist access. Check out the [configuration instructions](https://shanalikhan.github.io/2016/07/31/Visual-Studio-code-sync-setting-edit-manually.html)
 
-Take a look at which plugins I use with:
+My currently configured plugins can be found with:
 
 ```bash
 curl https://gist.githubusercontent.com/birkirbrynjarsson/8b47741d950a86e46222eb8bfc293a9a/raw/4f7d7b697c724a4abdb36cceb75fb5ffa00944a2/extensions.json | grep name
