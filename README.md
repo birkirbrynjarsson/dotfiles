@@ -168,7 +168,7 @@ gem install colorls
 
 
 ## Node
-Setup Node with nvm and install global packages
+Setup Node with nvm
 
 ```bash
 mkdir ~/.nvm
@@ -176,10 +176,13 @@ nvm install 8.12.0
 nvm install 10.13.0
 nvm alias default 8.12.0
 nvm use default
-npm install -g @angular/cli
-npm install -g fb-messenger-cli
 ```
 
+Install global packages from `npmfile`
+
+```bash
+xargs -L1 npm i -g < npmfile
+```
 
 ## Visual Studio Code settings
 I sync plugins and settings to Visual Studio Code with the [*Settings sync*](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) plugin. It requires a GitHub API Token with gist access. Check out the [configuration instructions](https://shanalikhan.github.io/2016/07/31/Visual-Studio-code-sync-setting-edit-manually.html)
