@@ -4,7 +4,7 @@ alias zshreload='source ~/.zshrc'
 
 alias lc='colorls --gs --sd -lA'
 alias lcc='colorls --gs --sd --tree'
-alias .='pwd'
+
 alias f='open -a Finder ./' # Also aliased to 'ofd' from osx plugin
 
 # List global npm installations
@@ -13,6 +13,9 @@ alias npmgL0='npm ls -g --depth=0'
 # Folder shortcuts
 alias dropbox='cd $HOME/Dropbox/'
 alias gitbox='cd $HOME/Gitbox/'         # Where I store downloaded github repos
+
+# Python related
+alias prp="pipenv run python"
 
 # Aliases from https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
 

@@ -77,6 +77,7 @@ plugins=(
   npm
   nvm
   osx
+  pip
   rbenv
   vscode
   web-search
