@@ -204,7 +204,7 @@ curl https://gist.githubusercontent.com/birkirbrynjarsson/8b47741d950a86e46222eb
 
 ## Dropbox Desktop sync
 
-Sync your Desktop between workstations
+Sync your Desktop between workstations, further instructions [here](https://www.imore.com/how-sync-your-documents-desktop-and-any-other-folder-dropbox)
 
 ```bash
 ln -s ~/Desktop ~/Dropbox/
