@@ -48,6 +48,7 @@ cask "slack"
 cask "spotify"
 cask "transmission"
 cask "transmit"
+cask "unity-hub"
 cask "visual-studio-code"
 cask "vlc"
 mas "Airmail 3", id: 918858936
