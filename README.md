@@ -181,7 +181,7 @@ nvm use default
 Install global packages from `npmfile`
 
 ```bash
-xargs -L1 npm i -g < npmfile
+xargs -L1 npm i -g < ~/dotfiles/npmfile
 ```
 
 
