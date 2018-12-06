@@ -150,7 +150,7 @@ pip3 install pygments
 ```
 
 
-### Ruby
+### Ruby and Gems
 
 Install Ruby and `colorls` for colorful `ls` with icons. Aliased to `lc` and `lcc`
 
@@ -162,8 +162,9 @@ rbenv global 2.5.3
 Restart your terminal before installing gems
 
 ```bash
-gem install bundler
 gem install colorls
+gem install bundler
+gem install jekyll
 ```
 
 
