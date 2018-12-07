@@ -3,6 +3,9 @@
 # Custom dropbox PATH environment
 PATH="$HOME/Dropbox/.bin:$PATH"
 
+# SqlPackage installation
+PATH="$PATH:$HOME/Dropbox/.bin/sqlpackage"
+
 export PATH
 
 # NVM Setup
