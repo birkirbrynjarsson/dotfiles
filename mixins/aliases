@@ -15,6 +15,9 @@ alias dotfiles='cd $HOME/dotfiles/'
 alias dropbox='cd $HOME/Dropbox/'
 alias gitbox='cd $HOME/Gitbox/'         # Where I store downloaded github repos
 
+# Git
+alias glr='git submodule update --init --recursive'
+
 # Python related
 alias prp="pipenv run python"
 
