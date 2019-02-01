@@ -65,11 +65,12 @@ Install [**Homebrew**](https://brew.sh/)
 ```
 
 
-Install applications from **Brewfile**
+Install applications from **Brewfile** and optionally a secondary file, `Brewfile2`
 
 ```bash
 cd ~/dotfiles
 brew bundle
+brew bundle --file=Brewfile2
 ```
 
 ## SSH keys
