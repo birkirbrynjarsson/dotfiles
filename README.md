@@ -200,7 +200,11 @@ I sync plugins and settings to Visual Studio Code with the [*Settings sync*](htt
 My currently configured plugins can be found with:
 
 ```bash
-curl https://gist.githubusercontent.com/birkirbrynjarsson/8b47741d950a86e46222eb8bfc293a9a/raw/4f7d7b697c724a4abdb36cceb75fb5ffa00944a2/extensions.json | grep name
+curl -s https://api.github.com/gists/8b47741d950a86e46222eb8bfc293a9a \
+| jq '.files."extensions.json".raw_url' \
+| tr -d \" \
+| xargs curl -s \
+| grep name
 ```
 
 
