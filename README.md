@@ -236,11 +236,11 @@ These files might contain Software Licenses or other private data.
 The `.shpotify.cfg`, *iStat Menus* settings and *Bartender.plist* are examples of such private files.
 
 Another tool that might be worth taking a look at is [mackup](https://github.com/lra/mackup) which:
-- Back ups your application settings in a safe directory (e.g. Dropbox)
+- Backs-ups your application settings in a safe directory (e.g. Dropbox)
 - Syncs your application settings among all your workstations
-- Restores your configuration on any fresh install in one command line
+- Restores your configuration on any fresh install with a single command
 
-If you try out mackup, do create a `.mackup.cfg` and explicitly list the applications you want it used with. Mackup stores preferences in a cloud service (e.g. Dropbox) and symlinks everything from there, so be cautious and dont just run `mackup backup` unless you're sure.
+If you try out mackup, do create a `.mackup.cfg` and explicitly list the applications you want it used with. Mackup stores preferences in a cloud service (e.g. Dropbox) and symlinks everything from there, be cautious and dont just run `mackup backup` unless you're sure.
 
 ### Syncing with mackup
 
