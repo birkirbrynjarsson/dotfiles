@@ -174,9 +174,10 @@ Setup Node with nvm
 
 ```bash
 mkdir ~/.nvm
-nvm install 8.12.0
-nvm install 10.13.0
-nvm alias default 8.12.0
+nvm ls
+nvm install lts/carbon
+nvm install lts/dubnium
+nvm alias default lts/carbon
 nvm use default
 ```
 
@@ -217,7 +218,10 @@ ln -s ~/Desktop ~/Dropbox/
 ```
 
 
-## Other preferences and private files
+## Private Config files
+
+I keep some config files, shell aliases and application preferences in a [private branch](https://24ways.org/2013/keeping-parts-of-your-codebase-private-on-github/) of this repository and copy them into their designated destination after installing the apps. 
+These files might contain Software Licenses or other private data.
 
 ### Spotify CLI
 
@@ -227,35 +231,6 @@ Add CLIENT_ID and CLIENT_SECRET to `~/.shpotify.cfg`, get this information by [c
 ```bash
 echo 'CLIENT_ID="urCl13nt1D"' > ~/.shpotify.cfg
 echo 'CLIENT_SECRET="urCl13nt53cret"' >> ~/.shpotify.cfg
-```
-
-### Private branch or Mackup
-
-I keep some application preferences in a [private branch](https://24ways.org/2013/keeping-parts-of-your-codebase-private-on-github/) of this repository and move them into `~/Library/Preferences/` after installing the apps. 
-These files might contain Software Licenses or other private data.  
-The `.shpotify.cfg`, *iStat Menus* settings and *Bartender.plist* are examples of such private files.
-
-Another tool that might be worth taking a look at is [mackup](https://github.com/lra/mackup) which:
-- Backs-ups your application settings in a safe directory (e.g. Dropbox)
-- Syncs your application settings among all your workstations
-- Restores your configuration on any fresh install with a single command
-
-If you try out mackup, do create a `.mackup.cfg` and explicitly list the applications you want it used with. Mackup stores preferences in a cloud service (e.g. Dropbox) and symlinks everything from there, be cautious and dont just run `mackup backup` unless you're sure.
-
-### Syncing with mackup
-
-Copy (symlinking didn't work) the mackup config and custom configurations to `~/`
-
-```bash
-cp ~/dotfiles/.mackup.cfg ~/
-cp -R ~/dotfiles/.mackup ~/
-```
-
-Restore from mackup, given that the files have been synced with dropbox or wherever your preference files are stored (`~/Dropbox/Mackup/`) after initially running `mackup backup` on a previously configured/setup system.
-
-```bash
-cd ~
-mackup restore
 ```
 
 ## Post installation cleanup
