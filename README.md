@@ -235,7 +235,7 @@ echo 'CLIENT_SECRET="urCl13nt53cret"' >> ~/.shpotify.cfg
 
 ## Post installation cleanup
 
-Cleanup Brew installations
+Cleanup and update Brew installations (Run this command regularly to update software)
 
 ```bash
 bubu
