@@ -75,7 +75,6 @@ plugins=(
   git
   ng
   npm
-  nvm
   osx
   pip
   rbenv
@@ -135,7 +134,7 @@ ZSHRC_PATH=$(dirname "$(readlink "${(%):-%N}")")
 source $ZSHRC_PATH/mixins/paths
 source $ZSHRC_PATH/mixins/aliases
 source $ZSHRC_PATH/mixins/functions
-   
+
 if [ -e $ZSHRC_PATH/mixins/private ]; then
   source $ZSHRC_PATH/mixins/private
 fi
