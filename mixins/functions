@@ -8,3 +8,18 @@ yt-lucky(){
         echo "No URL found!"
     fi
 }
+
+# Dictionary search, prefix ^ to get only words starting letters. ex: ^wh
+dict() {
+    grep "$@" /usr/share/dict/words
+}
+
+# Used instead of git clone, places repositories in desired location
+ghget () {
+    # input: rails/rails
+    USER=$(echo $@ | tr "/" " " | awk '{print $1}')
+    REPO=$(echo $@ | tr "/" " " | awk '{print $2}')
+    mcd "$HOME/Gitbox/$USER" && \
+    hub clone $@ && \
+    cd $REPO
+}
