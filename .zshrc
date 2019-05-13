@@ -81,7 +81,6 @@ plugins=(
   rbenv
   vscode
   web-search
-  zsh-apple-touchbar
   zsh-autosuggestions
   zsh-completions
   history-substring-search
