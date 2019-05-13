@@ -77,7 +77,6 @@ plugins=(
   npm
   osx
   pip
-  rbenv
   vscode
   web-search
   zsh-autosuggestions

@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# Ruby, rbenv
+eval "$(rbenv init -)"
+
 # Custom dropbox PATH environment
 PATH="$HOME/Dropbox/.bin:$PATH"
 
