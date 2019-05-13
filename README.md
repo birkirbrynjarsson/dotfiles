@@ -153,11 +153,11 @@ pip3 install pygments
 
 ### Ruby and Gems
 
-Install Ruby and `colorls` for colorful `ls` with icons. Aliased to `lc` and `lcc`
+Install latest Ruby version and `colorls` for colorful `ls` with icons. Aliased to `lc` and `lcc`
 
 ```bash
-rbenv install 2.5.3
-rbenv global 2.5.3
+rbenv install $(rbenv install -l | grep -v - | tail -1)
+rbenv global $(rbenv install -l | grep -v - | tail -1)
 ```
 
 Restart your terminal before installing gems
