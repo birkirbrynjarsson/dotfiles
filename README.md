@@ -11,7 +11,7 @@ If you want to make your own setup based on this one I recommend the following s
 
 - Fork the repository
 - Edit the Brewfile
-  - Some apps however are required for later steps (e.g. cask-fonts, font-meslo-nerd-font, iTerm2, nvm, python, rbenv)
+  - Some apps however are required for later steps (e.g. cask-fonts, font-meslo-nerd-font, iTerm2, mas, nvm, python, rbenv)
 - Edit settings.sh to suit your own preferences
 - Edit mixin/aliases
   - PS. before you start adding your own aliases I recommend running `alias` and looking at what is already there, a lot of stuff comes with the Oh-My-Zsh plugins.
