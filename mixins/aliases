@@ -58,8 +58,41 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias path='echo -e ${PATH//:/\\n}'
 
 # Streams
-alias ruv='streamlink http://ruv.is/ruv best'
+alias ruv='streamlink https://www.ruv.is/ruv best'
+alias ruv2='streamlink https://www.ruv.is/ruv2 best'
+alias svt1='streamlink https://www.svtplay.se/kanaler/svt1'
+alias svt2='streamlink https://www.svtplay.se/kanaler/svt2'
+alias dr1='streamlink https://www.dr.dk/tv/live/dr1'
+alias dr2='streamlink https://www.dr.dk/tv/live/dr2'
+alias dr3='streamlink https://www.dr.dk/tv/live/dr3'
+alias bloomberg='streamlink https://www.bloomberg.com/live/europe best'
+alias aljazeera='streamlink https://www.aljazeera.com/live/ best'
 
+# Radio
+alias 101='vlc -Idummy https://stream.101.live/audio/101/chunklist.m3u8'
+alias 80sbylgjan='vlc -Idummy http://icecast.365net.is:8000/orb80s.aac'
+alias apparatid='vlc -Idummy http://icecast.365net.is:8000/orbApparatid.aac'
+alias attan='vlc -Idummy http://89.17.150.20:443/attan'
+alias bbcworld='vlc -Idummy http://bbcwssc.ic.llnwd.net/stream/bbcwssc_mp1_ws-eieuk'
+alias bylgjan='vlc -Idummy http://icecast.365net.is:8000/orbbylgjan.aac'
+alias fb60='vlc -Idummy http://89.17.150.20:443/60flashback'
+alias fb70='vlc -Idummy http://89.17.150.20:443/70flashback'
+alias fb80='vlc -Idummy http://89.17.150.20:443/80flashback'
+alias fb90='vlc -Idummy http://89.17.150.20:443/90flashback'
+alias flashback='vlc -Idummy http://89.17.150.20:443/flashback'
+alias fm957='vlc -Idummy http://icecast.365net.is:8000/orbFm957.aac'
+alias fmextra='vlc -Idummy http://icecast.365net.is:8000/orbFmExtra.aac'
+alias fmx='vlc -Idummy http://icecast.365net.is:8000/orbFMX.aac'
+alias gullbylgjan='vlc -Idummy http://icecast.365net.is:8000/orbGullBylgjan.aac'
+alias kaninn='vlc -Idummy http://89.17.150.20:443/kaninnmobile'
+alias kissfm='vlc -Idummy http://89.17.150.20:443/kissfm'
+alias lettbylgjan='vlc -Idummy http://icecast.365net.is:8000/orbLettBylgjan.aac'
+alias ras1='vlc -Idummy http://netradio.ruv.is/ras1.mp3'
+alias ras2='vlc -Idummy http://netradio.ruv.is/ras2.mp3'
+alias retrofm='vlc -Idummy http://89.17.150.20:443/retromobile'
+alias rondo='vlc -Idummy http://netradio.ruv.is/rondo.mp3'
+alias ruvnull='vlc -Idummy http://netradio.ruv.is/ruvnull.mp3'
+alias xid='vlc -Idummy http://icecast.365net.is:8000/orbXid.aac'
 
 
 
