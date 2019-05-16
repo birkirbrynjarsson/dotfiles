@@ -71,7 +71,7 @@ alias bloomberg='streamlink https://www.bloomberg.com/live/europe best 1> /dev/n
 alias aljazeera='streamlink https://www.aljazeera.com/live/ best 1> /dev/null &'
 
 # Radio
-alias radio='alias | grep Idummy | grep -o ".*=" | grep -v radio= | cut -d= -f1'
+alias radio='alias | grep "vlc -Idummy" | grep -o ".*=" | grep -v radio= | cut -d= -f1'
 alias stopradio="pkill -f 'VLC -Idummy'"
 alias 101='stopradio; vlc -Idummy https://stream.101.live/audio/101/chunklist.m3u8 2> /dev/null &'
 alias 80sbylgjan='stopradio; vlc -Idummy http://icecast.365net.is:8000/orb80s.aac 2> /dev/null &'
