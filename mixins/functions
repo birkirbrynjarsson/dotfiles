@@ -3,7 +3,7 @@
 yt-lucky(){
     URL=$(youtube-dl -j ytsearch1:$1 | jq '.webpage_url' | sed -e 's/^"//' -e 's/"$//')
     if [[ -n "$URL" ]]; then
-        vlc $URL
+        vlc $URL 2> /dev/null &
     else
         echo "No URL found!"
     fi
