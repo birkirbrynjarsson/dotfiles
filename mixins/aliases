@@ -58,7 +58,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias path='echo -e ${PATH//:/\\n}'
 
 # Streams
-alias tv='alias | grep streamlink | grep -o ".*=" | cut -d= -f1'
+alias tv='alias | grep streamlink | grep -o ".*=" | grep -v tv= | cut -d= -f1'
 alias ruv='streamlink https://www.ruv.is/ruv best'
 alias ruv2='streamlink https://www.ruv.is/ruv2 best'
 alias svt1='streamlink https://www.svtplay.se/kanaler/svt1'
@@ -70,7 +70,7 @@ alias bloomberg='streamlink https://www.bloomberg.com/live/europe best'
 alias aljazeera='streamlink https://www.aljazeera.com/live/ best'
 
 # Radio
-alias radio='alias | grep Idummy | grep -o ".*=" | cut -d= -f1'
+alias radio='alias | grep Idummy | grep -o ".*=" | grep -v radio= | cut -d= -f1'
 alias 101='vlc -Idummy https://stream.101.live/audio/101/chunklist.m3u8'
 alias 80sbylgjan='vlc -Idummy http://icecast.365net.is:8000/orb80s.aac'
 alias apparatid='vlc -Idummy http://icecast.365net.is:8000/orbApparatid.aac'
