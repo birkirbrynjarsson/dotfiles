@@ -1,12 +1,18 @@
 #!/usr/bin/env zsh
 
-yt-lucky(){
+# Search youtube and play top result automatically with VLC in the background
+yt-lucky() {
     URL=$(youtube-dl -j ytsearch1:$1 | jq '.webpage_url' | sed -e 's/^"//' -e 's/"$//')
     if [[ -n "$URL" ]]; then
-        vlc $URL 2> /dev/null &
+        vlc $URL NUL &
     else
         echo "No URL found!"
     fi
+}
+
+# Play youtube url with VLC in the background
+yt() {
+    vlc $@ NUL &
 }
 
 # Dictionary search, prefix ^ to get only words starting letters. ex: ^wh
@@ -14,8 +20,8 @@ dict() {
     grep "$@" /usr/share/dict/words
 }
 
-# Used instead of git clone, places repositories in desired location
-ghget () {
+# Used instead of hub clone, places repositories in my 'Gitbox' folder
+ghget() {
     # input: rails/rails
     USER=$(echo $@ | tr "/" " " | awk '{print $1}')
     REPO=$(echo $@ | tr "/" " " | awk '{print $2}')
