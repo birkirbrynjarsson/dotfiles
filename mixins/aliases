@@ -19,6 +19,7 @@ alias gitbox='cd $HOME/Gitbox/'         # Where I store downloaded github repos
 alias glr='git submodule update --init --recursive'
 # Git Remove Untracked Branches
 alias gitru='git branch -r | awk "{print \$1}" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk "{print \$1}" | xargs git branch -d'
+alias gitundo='git reset HEAD~' # Undo last local commit
 
 # Python related
 alias prp="pipenv run python"
