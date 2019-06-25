@@ -2496,9 +2496,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>4250 486 620 392 3600 -30 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>3869 113 918 452 3600 -30 1920 1057 </string>
+	<string>4115 278 796 486 3600 -30 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>3600 -30 1920 1080 3600 -30 1920 1057 </string>
+	<string>4022 337 1018 503 3600 -30 1920 1057 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2683,7 +2683,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>2.8602653077411184</real>
+			<real>2.4191644194162452</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -3225,6 +3225,8 @@
 			<true/>
 			<key>Normal Font</key>
 			<string>MesloLGSNerdFontComplete-Regular 13</string>
+			<key>Only The Default BG Color Uses Transparency</key>
+			<false/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -3270,7 +3272,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.0068706376903553299</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -3288,7 +3290,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>1</integer>
+			<integer>0</integer>
 			<key>Working Directory</key>
 			<string>/Users/birkir</string>
 		</dict>
@@ -3357,7 +3359,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-05-14T08:24:27Z</date>
+	<date>2019-05-21T08:43:31Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>Secure Input</key>

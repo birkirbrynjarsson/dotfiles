@@ -61,4 +61,5 @@ cask "vlc"
 mas "Airmail 3", id: 918858936
 mas "Bear", id:1091189122
 mas "Magnet", id: 441258766
+mas "Day One", id: 1055511498
 # mas "Paste", id: 967805235
