@@ -2496,9 +2496,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>4250 486 620 392 3600 -30 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>4115 278 796 486 3600 -30 1920 1057 </string>
+	<string>4126 226 937 514 3600 -30 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>4022 337 1018 503 3600 -30 1920 1057 </string>
+	<string>41 366 1162 645 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -3238,7 +3238,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>4000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -3274,7 +3274,7 @@
 			<key>Transparency</key>
 			<real>0.0068706376903553299</real>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -3359,7 +3359,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-05-21T08:43:31Z</date>
+	<date>2019-07-04T08:31:01Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>Secure Input</key>
