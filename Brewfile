@@ -12,6 +12,7 @@ brew "hugo"
 brew "imagemagick"
 brew "jq"
 brew "mas"
+brew "mono"
 brew "nmap"
 brew "nvm"
 brew "p7zip"
@@ -28,6 +29,8 @@ brew "upx"
 brew "wget"
 brew "youtube-dl"
 cask "1password"
+cask "adoptopenjdk/openjdk/adoptopenjdk8"
+cask "android-sdk"
 cask "bartender"
 cask "dictionaries"
 cask "discord"
@@ -60,6 +63,7 @@ cask "visual-studio-code"
 cask "vlc"
 mas "Airmail 3", id: 918858936
 mas "Bear", id:1091189122
-mas "Magnet", id: 441258766
 mas "Day One", id: 1055511498
+mas "Magnet", id: 441258766
+mas "Xcode", id: 497799835
 # mas "Paste", id: 967805235
