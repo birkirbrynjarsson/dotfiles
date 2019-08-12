@@ -61,9 +61,10 @@ cask "transmit"
 cask "unity-hub"
 cask "visual-studio-code"
 cask "vlc"
-mas "Airmail 3", id: 918858936
+# mas "Airmail 3", id: 918858936
 mas "Bear", id:1091189122
-mas "Day One", id: 1055511498
+# mas "Day One", id: 1055511498
 mas "Magnet", id: 441258766
+mas "Spark", id: 1176895641
 mas "Xcode", id: 497799835
 # mas "Paste", id: 967805235
