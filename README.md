@@ -3,7 +3,7 @@ Tools and instructions to speed up and automate my setup and configurations afte
 
 
 ## Requirements
-Clean installation of MacOS, preferably _Mojave_ as that's what this setup has been tested on.
+Clean installation of MacOS, preferably _Mojave_ or later as that's what this setup has been tested on.
 
 
 ## Make your own
@@ -20,7 +20,7 @@ If you want to make your own setup based on this one I recommend the following s
 
 # Manual Setup
 ~~Unfortunately~~ it's a manual process, there's no single script that automates everything.  
-However that's all cool as I enjoy going through the steps as well as maintaining this documentation.
+However that's all splendid, I enjoy going through the steps as well as maintaining this documentation.
 
 Install the **Xcode Command Line Tools**
 
@@ -64,6 +64,11 @@ Install [**Homebrew**](https://brew.sh/)
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
+Allow apps downloaded from anywhere before installing with Brew
+
+```bash
+sudo spctl --master-disable
+```
 
 Install applications from **Brewfile** and optionally a secondary file, `Brewfile2`
 
@@ -164,8 +169,6 @@ Restart your terminal before installing gems
 
 ```bash
 gem install colorls
-gem install bundler
-gem install jekyll
 ```
 
 
@@ -174,10 +177,9 @@ Setup Node with nvm
 
 ```bash
 mkdir ~/.nvm
-nvm ls
-nvm install lts/carbon
+nvm install lts/erbium
 nvm install lts/dubnium
-nvm alias default lts/carbon
+nvm alias default lts/erbium
 nvm use default
 ```
 
