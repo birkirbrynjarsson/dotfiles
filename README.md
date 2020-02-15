@@ -97,6 +97,7 @@ ssh -T git@github.com
 ## MacOS system preferences
 
 Run `settings.sh` to apply custom preferences for Finder, Menu bar, Dock etc.
+> These settings are what is most likely to break as the preferences and corresponding files change between Mac OS versions. To be safe, skip running this script (except for maybe the last osascript step in the file that updates the terminal.app look) and change settings manually.
 
 ```bash
 cd ~/dotfiles
