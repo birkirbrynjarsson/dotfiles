@@ -3,6 +3,13 @@
 # Ruby, rbenv
 eval "$(rbenv init -)"
 
+# Python, pyenv
+PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 # Custom dropbox PATH environment
 PATH="$HOME/Dropbox/.bin:$PATH"
 
