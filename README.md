@@ -196,6 +196,7 @@ With `pyenv` installed, get the latest version of python
 
 ```bash
 PYTHON_LATEST=$(pyenv install --list | sed 's/^  //' | grep '^\d' | grep --invert-match 'dev\|a\|b' | tail -1)
+PYTHON_CONFIGURE_OPTS="--enable-framework"
 pyenv install $PYTHON_LATEST
 pyenv versions
 pyenv global $PYTHON_LATEST
