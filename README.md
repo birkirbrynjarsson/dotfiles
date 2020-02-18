@@ -192,11 +192,14 @@ xargs -L1 npm i -g < ~/dotfiles/npmfile
 
 
 ## Python
+With `pyenv` installed, get the latest version of python
 
 ```bash
-pip3 install pyinstaller
+PYTHON_LATEST=$(pyenv install --list | sed 's/^  //' | grep '^\d' | grep --invert-match 'dev\|a\|b' | tail -1)
+pyenv install $PYTHON_LATEST
+pyenv versions
+pyenv global $PYTHON_LATEST
 ```
-
 
 ## Visual Studio Code settings
 I sync plugins and settings to Visual Studio Code with the [*Settings sync*](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) plugin. It requires a GitHub API Token with gist access. Check out the [configuration instructions](https://shanalikhan.github.io/2016/07/31/Visual-Studio-code-sync-setting-edit-manually.html). I store my GitHub API Token in a secure note with 1password.
