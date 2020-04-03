@@ -1,5 +1,12 @@
 #!/usr/bin/env zsh
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -10,8 +17,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE='nerdfont-complete'
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -42,7 +49,7 @@ HYPHEN_INSENSITIVE="true"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -67,26 +74,27 @@ HYPHEN_INSENSITIVE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   brew
-  common-aliases
   colored-man-pages
   colorize
+  command-not-found
+  common-aliases
   docker
+  docker-compose
   extract
   git
+  git-auto-fetch
+  jira
   ng
+  node
   npm
+  npx
   osx
   pip
   vscode
   web-search
-  zsh-autosuggestions
-  zsh-completions
-  history-substring-search
-  zsh-syntax-highlighting
+  zsh_reload
+  z
 )
-
-# Reload completions for zsh-completions plugin
-autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
@@ -120,11 +128,23 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-
 # --- PRIVATE CHANGES & SOURCED FILES --- #
 
-# Set Default Editor (change 'Nano' to the editor of your choice)
-export EDITOR=/usr/bin/nano
+# Activate zsh plugins
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# zsh completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
+# Set Default Editor
+export EDITOR=/usr/bin/vim
 
 DEFAULT_USER=`whoami`
 
@@ -137,3 +157,5 @@ source $ZSHRC_PATH/mixins/functions
 if [ -e $ZSHRC_PATH/mixins/private ]; then
   source $ZSHRC_PATH/mixins/private
 fi
+
+source $ZSHRC_PATH/mixins/p10k.zsh

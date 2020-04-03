@@ -123,23 +123,6 @@ Install **[Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)**
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-Install [**Powerlevel9**](https://github.com/bhilburn/powerlevel9k) theme
-
-```bash
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-```
-
-Install custom zsh-plugins
-
-[zsh-**autosuggestions**](https://github.com/zsh-users/zsh-autosuggestions), [zsh-**completions**](https://github.com/zsh-users/zsh-completions), [zsh-**history-substring-search**](https://github.com/zsh-users/zsh-history-substring-search) and [zsh-**syntax-highlighting**](https://github.com/zsh-users/zsh-syntax-highlighting)
-
-```bash
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM}/plugins/zsh-completions
-git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM}/plugins/zsh-history-substring-search
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
-```
-
 ### Zsh Profile
 
 Source the ZSH profile (optionally restart Terminal/iTerm2 after creating the symlink)
@@ -148,12 +131,6 @@ Source the ZSH profile (optionally restart Terminal/iTerm2 after creating the sy
 rm ~/.zshrc
 ln -s ~/dotfiles/.zshrc ~/
 source ~/.zshrc
-```
-
-Install **Pygments** for colorized `cat` with `ccat` from the [_colorize_](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/colorize) plugin.
-
-```bash
-pip3 install pygments
 ```
 
 
@@ -228,7 +205,7 @@ ln -s ~/Desktop ~/Dropbox/
 ## Private Config files
 
 I keep some config files, shell aliases and application preferences in a [private branch](https://24ways.org/2013/keeping-parts-of-your-codebase-private-on-github/) of this repository and copy them into their designated destination after installing the apps. 
-These files might contain Software Licenses or other private data.
+These files might contain Software Licenses, network addresses or other private data.
 
 ### Spotify CLI
 
@@ -248,11 +225,12 @@ Adobe Photoshop
 Canon EOS Utility
 ```
 
-## Post installation cleanup
+## Stay up to date
 
-Cleanup and update Brew installations (Run this command regularly to update software)
+Run these commands regularly to stay up to date
 
 ```bash
+# Brew upgrade, update and cleanup
 bubu
 ```
 

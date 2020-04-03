@@ -2514,7 +2514,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>4126 226 937 514 3600 -30 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1680 1050 0 0 1680 1050 </string>
+	<string>1142 501 1130 722 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2332 -30 1130 722 1680 -30 1920 1057 </string>
 	<key>New Bookmarks</key>
@@ -2523,7 +2523,7 @@
 			<key>ASCII Anti Aliased</key>
 			<true/>
 			<key>ASCII Ligatures</key>
-			<false/>
+			<true/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -2763,6 +2763,8 @@
 			<key>Description</key>
 			<string>Default</string>
 			<key>Disable Window Resizing</key>
+			<true/>
+			<key>Draw Powerline Glyphs</key>
 			<true/>
 			<key>Flashing Bell</key>
 			<false/>
@@ -3340,9 +3342,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1680, 1050}}</string>
+		<string>{{0, 0}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{497, 812}</string>
+		<string>{289, 636}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -3351,7 +3353,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>B3403164-7A65-4EEF-877F-4525C6F1A132</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>47</integer>
+	<integer>63</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>586566572.53947604</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -4128,7 +4130,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-03-02T09:25:35Z</date>
+	<date>2020-04-03T16:17:39Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
