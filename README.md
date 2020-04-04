@@ -130,6 +130,7 @@ Source the ZSH profile (optionally restart Terminal/iTerm2 after creating the sy
 ```bash
 rm ~/.zshrc
 ln -s ~/dotfiles/.zshrc ~/
+ln -s ~/dotfiles/mixins/.vimrc ~/
 source ~/.zshrc
 ```
 
@@ -205,7 +206,7 @@ ln -s ~/Desktop ~/Dropbox/
 ## Private Config files
 
 I keep some config files, shell aliases and application preferences in a [private branch](https://24ways.org/2013/keeping-parts-of-your-codebase-private-on-github/) of this repository and copy them into their designated destination after installing the apps. 
-These files might contain Software Licenses, network addresses or other private data.
+These files might contain Software Licenses, network addresses and other private data.
 
 ### Spotify CLI
 

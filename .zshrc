@@ -82,7 +82,6 @@ plugins=(
   docker-compose
   extract
   git
-  git-auto-fetch
   jira
   ng
   node
