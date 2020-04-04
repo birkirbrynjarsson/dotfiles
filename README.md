@@ -37,13 +37,6 @@ git config --global github.user birkirbrynjarsson
 git config --global core.excludesfile ~/.gitignore
 echo .DS_Store >> ~/.gitignore
 ```
-Other configurations ~~I specify~~
-
-```bash
-git config --global github.token your_token_here
-git config --global core.editor "code -w"
-git config --global color.ui true
-```
 
 ## Clone the repository
 Clone the repository and hide it in Finder with `chflags`
@@ -93,6 +86,20 @@ If the public **SSH-key** has been added to [GitHub](https://github.com/settings
 ```bash
 ssh -T git@github.com
 ```
+
+### GPG keys, Github
+
+Setup `~/.gnupg` folder from backup, checkout this [gist](https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e) for how to GPG.
+
+```bash
+gpg -k --keyid-format LONG # Copy the key for next step
+git config --global user.signingkey <KEY>
+git config --global commit.gpgsign true
+git config --global gpg.program $(which gpg)
+echo "pinentry-program /usr/local/bin/pinentry-mac" > ~/.gnupg/gpg-agent.conf
+echo "use-agent" > ~/.gnupg/gpg.conf
+```
+
 
 ## MacOS system preferences
 
