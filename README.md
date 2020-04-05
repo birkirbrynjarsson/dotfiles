@@ -136,8 +136,8 @@ Source the ZSH profile (optionally restart Terminal/iTerm2 after creating the sy
 
 ```bash
 rm ~/.zshrc
-ln -s ~/dotfiles/.zshrc ~/
-ln -s ~/dotfiles/mixins/.vimrc ~/
+ln -sv ~/dotfiles/.zshrc ~/
+ln -sv ~/dotfiles/.vimrc ~/
 source ~/.zshrc
 ```
 
@@ -206,7 +206,7 @@ curl -s https://api.github.com/gists/8b47741d950a86e46222eb8bfc293a9a \
 Sync your Desktop between workstations, further instructions [here](https://www.imore.com/how-sync-your-documents-desktop-and-any-other-folder-dropbox)
 
 ```bash
-ln -s ~/Desktop ~/Dropbox/
+ln -sv ~/Desktop ~/Dropbox/
 ```
 
 
