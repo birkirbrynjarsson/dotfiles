@@ -115,7 +115,7 @@ chmod +x settings.sh
 
 ## Make the shell awesome with iTerm2, Zsh, Oh-My-Zsh & Powerlevel10k
 
-![iTerm2 Screenshot](https://i.imgur.com/kgrwG9q.png "iTerm2 after customization")
+![iTerm2 Screenshot](https://i.imgur.com/NLdVDPS.png "iTerm2 after customization")
 
 Set preferences for iTerm2
 
