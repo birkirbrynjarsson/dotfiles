@@ -1,5 +1,0 @@
-tap "microsoft/mssql-release"
-brew "gradle"
-brew "msodbcsql"
-brew "mssql-tools"
-cask "java"

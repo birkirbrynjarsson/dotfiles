@@ -3,7 +3,7 @@ Tools and instructions to speed up and automate my setup and configurations afte
 
 
 ## Requirements
-Clean installation of MacOS, preferably _Mojave_ or later as that's what this setup has been tested on.
+MacOS, the following setup has a clean installation in mind.
 
 
 ## Make your own
@@ -104,7 +104,7 @@ echo "use-agent" > ~/.gnupg/gpg.conf
 ## MacOS system preferences
 
 Run `settings.sh` to apply custom preferences for Finder, Menu bar, Dock etc.
-> These settings are what is most likely to break as the preferences and corresponding files change between Mac OS versions. To be safe, skip running this script (except for maybe the last osascript step in the file that updates the terminal.app look) and change settings manually.
+> These settings are what is most likely to break as the preferences and corresponding files change between Mac OS versions. To be safe, skip running this script (except the last osascript step in the file that updates the look of terminal.app) and change settings manually.
 
 ```bash
 cd ~/dotfiles
@@ -113,7 +113,7 @@ chmod +x settings.sh
 ```
 
 
-## Make the shell awesome with iTerm2, Zsh & Oh-My-Zsh
+## Make the shell awesome with iTerm2, Zsh, Oh-My-Zsh & Powerlevel10k
 
 ![iTerm2 Screenshot](https://i.imgur.com/kgrwG9q.png "iTerm2 after customization")
 
