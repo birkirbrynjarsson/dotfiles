@@ -153,8 +153,9 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 
 # Flush Directory Service cache
 alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;echo "✌️ DNS flushed"'
-alias googledns='networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4'
-alias resetdns='networksetup -setdnsservers Wi-Fi 192.168.1.1 192.168.1.1'
+alias googledns="networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4"
+alias resetdns="networksetup -setdnsservers Wi-Fi 192.168.1.1 192.168.1.1"
+alias norddns="networksetup -setdnsservers Wi-Fi 103.86.99.100 103.86.96.100 208.67.222.220"
 
 #   ii:  display useful host related informaton
 #   -------------------------------------------------------------------
