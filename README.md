@@ -11,7 +11,7 @@ If you want to make your own setup based on this one I recommend the following s
 
 - Fork the repository
 - Edit the Brewfile
-  - Some apps however are required for later steps (e.g. cask-fonts, font-meslo-nerd-font, iTerm2, mas, nvm, rbenv, p10k, zsh-*)
+  - Some apps however are required for later steps (e.g. nerd-font, iTerm2, mas, nvm, neofetch, jq, rbenv, p10k, zsh-*)
 - Edit settings.sh to suit your own preferences
 - Edit mixin/aliases
   - PS. before you start adding your own aliases I recommend running `alias` and looking at what is already there, a lot of stuff comes with the Oh-My-Zsh plugins.
@@ -113,7 +113,7 @@ chmod +x settings.sh
 ```
 
 
-## Make the shell awesome with iTerm2, Zsh, Oh-My-Zsh & Powerlevel10k
+## Make the shell awesome with iTerm2, Zsh, Oh-My-Zsh, Powerlevel10k & neofetch
 
 ![iTerm2 Screenshot](https://i.imgur.com/NLdVDPS.png "iTerm2 after customization")
 
@@ -130,14 +130,17 @@ Install **[Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)**
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-### Zsh Profile
+### Zsh Profile +
 
-Source the ZSH profile (optionally restart Terminal/iTerm2 after creating the symlink)
+Source the ZSH profile and other config files (optionally restart Terminal/iTerm2 after creating the symlink)
 
 ```bash
-rm ~/.zshrc
-ln -sv ~/dotfiles/.zshrc ~/
-ln -sv ~/dotfiles/.vimrc ~/
+# Symlink neofetch config and .vimrc
+touch ~/.hushlogin
+ln -svf ~/dotfiles/neofetch/config.conf ~/.config/neofetch/
+ln -svf ~/dotfiles/.vimrc ~/
+# Symlink .zshrc
+ln -svf ~/dotfiles/.zshrc ~/
 source ~/.zshrc
 ```
 
@@ -240,6 +243,8 @@ Run these commands regularly to stay up to date
 ```bash
 # Brew upgrade, update and cleanup
 bubu
+# npm update
+npmu
 ```
 
 ## Credits
