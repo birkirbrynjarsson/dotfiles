@@ -1,4 +1,5 @@
 @angular/cli
+@nestjs/cli
 create-react-app
 fb-messenger-cli
 gengi-cli

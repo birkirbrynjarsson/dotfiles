@@ -67,8 +67,7 @@ Install applications from **Brewfile** and optionally a secondary file, `Brewfil
 
 ```bash
 cd ~/dotfiles
-brew bundle
-brew bundle --file=Brewfile2
+brew bundle -v
 ```
 
 ## SSH keys
@@ -137,11 +136,18 @@ Source the ZSH profile and other config files (optionally restart Terminal/iTerm
 ```bash
 # Symlink neofetch config and .vimrc
 touch ~/.hushlogin
+mkdir -p ~/.config/neofetch
 ln -svf ~/dotfiles/neofetch/config.conf ~/.config/neofetch/
 ln -svf ~/dotfiles/.vimrc ~/
 # Symlink .zshrc
 ln -svf ~/dotfiles/.zshrc ~/
 source ~/.zshrc
+```
+
+If you get compaudit insecure directories error run:
+```bash
+compaudit | xargs chmod g-w
+compaudit | xargs chmod o-w
 ```
 
 
@@ -175,7 +181,7 @@ nvm use default
 Install global packages from `npmfile`
 
 ```bash
-xargs -L1 npm i -g < ~/dotfiles/npmfile
+cat ~/dotfiles/npmfile | xargs -L1 npm i -g > /dev/null
 ```
 
 
@@ -186,8 +192,8 @@ With `pyenv` installed, get the latest version of python
 PYTHON_LATEST=$(pyenv install --list | sed 's/^  //' | grep '^\d' | grep --invert-match 'dev\|a\|b' | tail -1)
 PYTHON_CONFIGURE_OPTS="--enable-framework"
 pyenv install $PYTHON_LATEST
-pyenv versions
 pyenv global $PYTHON_LATEST
+pip install --upgrade pip
 ```
 
 ## Visual Studio Code settings
