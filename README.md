@@ -203,6 +203,15 @@ curl -s https://api.github.com/gists/8b47741d950a86e46222eb8bfc293a9a \
 | grep name
 ```
 
+## openpyn - NordVPN cli
+
+With wget, openvpn and python3 installed using pyenv, install [openpyn](https://github.com/jotyGill/openpyn-nordvpn)
+```bash
+pip install openpyn
+sudo brew services start openvpn
+sudo openpyn --init
+```
+
 
 ## Dropbox Desktop sync
 

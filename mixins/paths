@@ -16,6 +16,9 @@ PATH="$HOME/Dropbox/.bin:$PATH"
 # SqlPackage installation
 PATH="$PATH:$HOME/Dropbox/.bin/sqlpackage"
 
+# OpenVPN +
+PATH=/usr/local/sbin:$PATH
+
 export PATH
 
 # NVM Setup
