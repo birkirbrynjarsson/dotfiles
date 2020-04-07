@@ -102,6 +102,11 @@ alias rondo='stopradio; vlc -Idummy http://netradio.ruv.is/rondo.mp3 NUL &'
 alias ruvnull='stopradio; vlc -Idummy http://netradio.ruv.is/ruvnull.mp3 NUL &'
 alias xid='stopradio; vlc -Idummy http://icecast.365net.is:8000/orbXid.aac NUL &'
 
+# Currencies
+btc() { curl -s https://blockchain.info/ticker | jq '.USD.last,.ISK.last' | xargs echo | LC_ALL='en_US' awk '{printf "$%'"'"'d / %'"'"'dkr\n",$1,$2}' }
+eur() { curl -s https://api.exchangeratesapi.io/latest\?base\=EUR\&symbols\=ISK | jq '.rates.ISK' | LC_ALL='en_US' awk '{printf "%dkr\n",$1}' }
+usd() { curl -s https://api.exchangeratesapi.io/latest\?base\=USD\&symbols\=ISK | jq '.rates.ISK' | LC_ALL='en_US' awk '{printf "%dkr\n",$1}' }
+
 # VPN & DNS service
 alias nord=openpyn
 alias googledns="networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4"
@@ -156,6 +161,8 @@ alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rul
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+ip() { curl -s -m 3 ifconfig.co/json | jq '.ip,.city,.country' | xargs echo | awk '{printf "%s %s, %s\n",$1,$2,$3}' }
+dns() { print -P "$FG[003]DNS Configuration:$reset_color " ; scutil --dns | sed -ne '/resolver #1/,$ p' | head -n +6 }
 
 # Flush Directory Service cache
 alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;echo "✌️ DNS flushed"'
