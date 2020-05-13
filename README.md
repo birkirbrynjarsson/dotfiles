@@ -80,6 +80,23 @@ chmod 600 ~/.ssh/id_rsa.pub
 chmod 700 ~/.ssh
 ```
 
+Create `~/.ssh/config` and modify it to automatically load keys into ssh-agent and store passphrases in keychain.
+
+```bash
+touch ~/.ssh/config
+# Add to following to the config file
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+```
+
+Add the private key to the `ssh-agent` and store the potential passphrase in the keychain.
+
+```bash
+ssh-add -K ~/.ssh/id_rsa
+```
+
 If the public **SSH-key** has been added to [GitHub](https://github.com/settings/ssh), the connection can be tested
 
 ```bash

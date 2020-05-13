@@ -29,3 +29,38 @@ ghget() {
     hub clone $@ && \
     cd $REPO
 }
+
+# Input podcast app url i.e https://podcasts.apple.com/us/podcast/the-daily/id1200361736
+podrss() {
+    ID=$(echo $1 | cut -d "/" -f7 | cut -c 3-)
+    curl -s https://itunes.apple.com/lookup\?id\=$ID | jq ".results[0].feedUrl" | xargs echo
+}
+# Input channel url i.e https://www.youtube.com/channel/UCGYYNGmyhZ_kwBF_lqqXdAQ
+ytrss() {
+    ID=$(echo $1 | cut -d "/" -f5)
+    NAME=$(wget -qO- $1 | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)\s*<\/title/si')
+    NAME=$(echo $NAME | xargs echo | rev | cut -c 11- | rev )
+    NAME=$(ascii "$NAME")
+    NAME=$(urlencode $NAME)
+    echo "https://www.scriptbarrel.com/xml.cgi?channel_id=$ID&name=$NAME"
+}
+
+add-podcast() {
+    FEED=$1
+    if [[ "$FEED" == *"apple.com"* ]]; then
+        FEED=$(podrss $FEED)
+    fi
+    echo $FEED >> ~/.newsboat/podcast
+}
+
+add-youtube() {
+    echo $(ytrss $1) >> ~/.newsboat/youtube
+}
+
+
+alias urldecode='python -c "import sys, urllib.parse as ul; print(ul.unquote_plus(sys.argv[1]))"'
+alias urlencode='python -c "import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1]))"'
+
+ascii() {
+    echo "'$1'" | xargs python -c "import sys, string; s=''.join(sys.argv[1:]); print(''.join(list(filter(lambda x: x in string.printable, s))))"
+}

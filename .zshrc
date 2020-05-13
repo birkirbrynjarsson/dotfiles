@@ -160,3 +160,6 @@ if [ -e $ZSHRC_PATH/mixins/private ]; then
 fi
 
 source $ZSHRC_PATH/mixins/p10k.zsh
+
+# /usr/local/opt/fzf/install
+[ -f $ZSHRC_PATH/mixins/.fzf.zsh ] && source $ZSHRC_PATH/mixins/.fzf.zsh

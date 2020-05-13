@@ -102,6 +102,24 @@ alias rondo='stopradio; vlc -Idummy http://netradio.ruv.is/rondo.mp3 NUL &'
 alias ruvnull='stopradio; vlc -Idummy http://netradio.ruv.is/ruvnull.mp3 NUL &'
 alias xid='stopradio; vlc -Idummy http://icecast.365net.is:8000/orbXid.aac NUL &'
 
+alias nrkp1='stopradio; vlc -Idummy https://lyd.nrk.no/nrk_radio_p1_ostlandssendingen_aac_h NUL &'
+alias nrkp2='stopradio; vlc -Idummy https://lyd.nrk.no/nrk_radio_p2_aac_h NUL &'
+alias nrkp3='stopradio; vlc -Idummy https://lyd.nrk.no/nrk_radio_p3_aac_h NUL &'
+alias nrkp13='stopradio; vlc -Idummy https://lyd.nrk.no/nrk_radio_p13_aac_h NUL &'
+alias nrkmp3='stopradio; vlc -Idummy https://lyd.nrk.no/nrk_radio_mp3_aac_h NUL &'
+
+# Spotify
+alias jamc='spotify play uri spotify:playlist:37i9dQZF1DZ06evO2BbbSy'
+
+# Podcasts
+alias podcasts="newsboat -u ~/.newsboat/podcasts -c ~/.newsboat/podcast-cache.db"
+alias playq='(cat ~/.newsboat/queue | cut -d " " -f1 | xargs vlc NUL &)'
+alias clearq='echo > ~/.newsboat/queue'
+
+# VLC - Youtube
+alias ytfeed="newsboat -u ~/.newsboat/youtube -c ~/.newsboat/youtube-cache.db"
+alias update-youtube-lua="curl https://raw.githubusercontent.com/videolan/vlc/master/share/lua/playlist/youtube.lua > /Applications/VLC.app/Contents/MacOS/share/lua/playlist/youtube.luac"
+
 # Currencies
 btc() { curl -s https://blockchain.info/ticker | jq '.USD.last,.ISK.last' | xargs echo | LC_ALL='en_US' awk '{printf "$%'"'"'d / %'"'"'dkr\n",$1,$2}' }
 eur() { curl -s https://api.exchangeratesapi.io/latest\?base\=EUR\&symbols\=ISK | jq '.rates.ISK' | LC_ALL='en_US' awk '{printf "%dkr\n",$1}' }
@@ -110,7 +128,7 @@ usd() { curl -s https://api.exchangeratesapi.io/latest\?base\=USD\&symbols\=ISK 
 # VPN & DNS service
 alias nord=openpyn
 alias googledns="networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4"
-alias resetdns="networksetup -setdnsservers Wi-Fi 192.168.1.1 192.168.1.1"
+alias resetdns="networksetup -setdnsservers Wi-Fi \"Empty\""
 alias norddns="networksetup -setdnsservers Wi-Fi 103.86.99.100 103.86.96.100 208.67.222.220"
 
 
