@@ -131,6 +131,12 @@ alias googledns="networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4"
 alias resetdns="networksetup -setdnsservers Wi-Fi \"Empty\""
 alias norddns="networksetup -setdnsservers Wi-Fi 103.86.99.100 103.86.96.100 208.67.222.220"
 
+# Batch rename iPhone Photos
+alias rename-iphone-photos="exiftool '-filename<CreateDate' -d '%Y-%m-%d %H.%M.%S%%-c.%%le' -r"
+
+# Browsers
+alias chrome="open -a 'Google Chrome'"
+alias firefox="open -a 'Firefox'"
 
 
 # Aliases from https://gist.github.com/natelandau/10654137
@@ -179,7 +185,7 @@ alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rul
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
-ip() { curl -s -m 3 ifconfig.co/json | jq '.ip,.city,.country' | xargs echo | awk '{printf "%s %s, %s\n",$1,$2,$3}' }
+ip() { curl -s -m 5 ifconfig.co/json | jq '.ip,.city,.country,.asn_org' | xargs echo | awk '{printf "%s %s, %s - %s\n",$1,$2,$3,$4}' }
 dns() { print -P "$FG[003]DNS Configuration:$reset_color " ; scutil --dns | sed -ne '/resolver #1/,$ p' | head -n +6 }
 
 # Flush Directory Service cache
