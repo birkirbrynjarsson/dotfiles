@@ -19,6 +19,9 @@ PATH="$PATH:$HOME/Dropbox/.bin/sqlpackage"
 # OpenVPN +
 PATH=/usr/local/sbin:$PATH
 
+# Add .NET Core SDK tools
+PATH="$PATH:$HOME/.dotnet/tools"
+
 export PATH
 
 # NVM Setup
