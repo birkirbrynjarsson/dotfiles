@@ -2464,6 +2464,8 @@
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>IRMemory</key>
+	<integer>4</integer>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -2508,15 +2510,15 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>1080 966 400 129 2560 390 1680 1027 </string>
+	<string>640 449 400 129 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>970 768 620 392 2560 -147 1680 1027 </string>
+	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>4126 226 937 514 3600 -30 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>783 474 1130 722 0 0 2560 1417 </string>
+	<string>222 190 990 642 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>423 263 834 501 0 0 1680 1027 </string>
+	<string>378 56 1130 722 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -3246,7 +3248,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>MesloLGSNerdFontComplete-Regular 13</string>
+			<string>RobotoMonoNerdFontComplete-Regular 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -3321,20 +3323,23 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.6</string>
-		<string>3.3.8</string>
-		<string>3.2.9</string>
-		<string>3.3.1</string>
 		<string>3.3.3</string>
-		<string>3.3.7</string>
-		<string>3.3.9</string>
-		<string>3.3.0</string>
-		<string>3.3.2</string>
+		<string>3.3.1</string>
+		<string>3.3.8</string>
+		<string>3.3.12</string>
+		<string>3.3.6</string>
+		<string>3.3.11</string>
 		<string>3.3.4</string>
+		<string>3.3.2</string>
+		<string>3.3.9</string>
+		<string>3.2.9</string>
+		<string>3.3.0</string>
+		<string>3.3.7</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>MesloLGS Nerd Font</string>
+		<string>MesloLGS NF</string>
+		<string>RobotoMono Nerd Font</string>
 	</array>
 	<key>NoSyncFrame_SessionsPreferences</key>
 	<dict>
@@ -3346,9 +3351,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {2560, 1440}}</string>
+		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{380, 677}</string>
+		<string>{909, 979}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -3359,7 +3364,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>B3403164-7A65-4EEF-877F-4525C6F1A132</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>85</integer>
+	<integer>137</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>586566572.53947604</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -4136,11 +4141,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-04-04T16:17:39Z</date>
+	<date>2020-09-09T10:04:10Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
-	<integer>2086976654</integer>
+	<integer>1729271941</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>Secure Input</key>
@@ -4168,7 +4173,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.9</string>
+	<string>3.3.12</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
