@@ -3,3 +3,6 @@
 create-react-app
 fb-messenger-cli
 gengi-cli
+live-server
+npm-check-updates
+webpack-bundle-analyzer
