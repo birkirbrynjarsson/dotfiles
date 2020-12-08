@@ -35,3 +35,6 @@ export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 
 # GPG
 export GPG_TTY=$(tty)
+
+# dotnet SDK
+export MSBuildSDKsPath="/usr/local/share/dotnet/sdk/$(dotnet --version)/Sdks"
