@@ -88,7 +88,6 @@ plugins=(
   ng
   node
   npm
-  npx
   osx
   pip
   vscode
