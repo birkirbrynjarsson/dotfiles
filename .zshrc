@@ -84,7 +84,6 @@ plugins=(
   docker-compose
   extract
   git
-  jira
   ng
   node
   npm

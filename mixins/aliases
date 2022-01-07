@@ -126,8 +126,10 @@ alias update-youtube-lua="curl https://raw.githubusercontent.com/videolan/vlc/ma
 
 # Currencies
 btc() { curl -s https://blockchain.info/ticker | jq '.USD.last,.ISK.last' | xargs echo | LC_ALL='en_US' awk '{printf "$%'"'"'d / %'"'"'dkr\n",$1,$2}' }
-eur() { curl -s https://api.exchangeratesapi.io/latest\?base\=EUR\&symbols\=ISK | jq '.rates.ISK' | LC_ALL='en_US' awk '{printf "%dkr\n",$1}' }
-usd() { curl -s https://api.exchangeratesapi.io/latest\?base\=USD\&symbols\=ISK | jq '.rates.ISK' | LC_ALL='en_US' awk '{printf "%dkr\n",$1}' }
+eur() { curl -s https://api.gengi.is/currencies.js | jq '.list.EUR.rate' }
+# eur() { curl -s https://api.exchangeratesapi.io/latest\?base\=EUR\&symbols\=ISK | jq '.rates.ISK' | LC_ALL='en_US' awk '{printf "%dkr\n",$1}' }
+usd() { curl -s https://api.gengi.is/currencies.js | jq '.list.USD.rate' }
+# usd() { curl -s https://api.exchangeratesapi.io/latest\?base\=USD\&symbols\=ISK | jq '.rates.ISK' | LC_ALL='en_US' awk '{printf "%dkr\n",$1}' }
 
 # VPN & DNS service
 alias nord=openpyn
