@@ -65,6 +65,9 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
+# Docker
+dkrm() { docker rm -f $(docker ps -aq) }
+
 # Streams - Might require VPN
 alias tv='alias | grep "[s]treamlink" | grep -o ".*=" | cut -d= -f1'
 alias stopvideo='kill $(ps aux | grep "[V]LC" | grep -v "[V]LC -Idummy" | awk '\''{print $2}'\'')'

@@ -38,4 +38,5 @@ export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 export GPG_TTY=$(tty)
 
 # dotnet SDK
-export MSBuildSDKsPath="/usr/local/share/dotnet/sdk/$(dotnet --version)/Sdks"
+export MSBuildSDKsPath="/usr/local/opt/dotnet/libexec/sdk/$(dotnet --version)/Sdks"
+export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
