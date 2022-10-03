@@ -20,13 +20,13 @@ dict() {
     grep "$@" /usr/share/dict/words
 }
 
-# Used instead of hub clone, places repositories in my 'Gitbox' folder
+# git clone, places repositories in my 'Gitbox' folder
 ghget() {
     # input: rails/rails
     USER=$(echo $@ | tr "/" " " | awk '{print $1}')
     REPO=$(echo $@ | tr "/" " " | awk '{print $2}')
     mcd "$HOME/Gitbox/$USER" && \
-    hub clone $@ && \
+    git clone "https://github.com/$@" && \
     cd $REPO
 }
 

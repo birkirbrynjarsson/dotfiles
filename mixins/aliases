@@ -31,6 +31,14 @@ alias prp="pipenv run python"
 # Http server in current directory
 alias http="python3 -m http.server"
 
+## kubectl aliases
+## https://github.com/ahmetb/kubectl-aliases
+alias k='kubectl'
+alias kg='kubectl get'
+alias kgpo='kubectl get pod'
+alias kn='kubens'
+alias kc='kubectx'
+
 # Aliases from https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
 
 # Get week number

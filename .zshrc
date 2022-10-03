@@ -161,3 +161,7 @@ source $ZSHRC_PATH/mixins/p10k.zsh
 
 # /usr/local/opt/fzf/install
 [ -f $ZSHRC_PATH/mixins/.fzf.zsh ] && source $ZSHRC_PATH/mixins/.fzf.zsh
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
