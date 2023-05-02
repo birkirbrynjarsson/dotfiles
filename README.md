@@ -189,10 +189,7 @@ Setup Node with nvm
 
 ```bash
 mkdir ~/.nvm
-nvm install lts/erbium
-nvm install lts/dubnium
-nvm alias default lts/erbium
-nvm use default
+nvm install --lts
 ```
 
 Install global packages from `npmfile`
