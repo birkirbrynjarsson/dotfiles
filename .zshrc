@@ -162,6 +162,8 @@ source $ZSHRC_PATH/mixins/p10k.zsh
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+if [ -x "$(command -v ng)" ]; then
+  source <(ng completion script)
+fi
 
-source /Users/birkir/.docker/init-zsh.sh || true # Added by Docker Desktop
+[ -f $HOME/.docker/init-zsh.sh ] && source $HOME/.docker/init-zsh.sh # Added by Docker Desktop
