@@ -30,6 +30,9 @@ ghget() {
     cd $REPO
 }
 
+# Get gitignore file from toptap, gitignore.io
+gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ }
+
 # Input podcast app url i.e https://podcasts.apple.com/us/podcast/the-daily/id1200361736
 podrss() {
     ID=$(echo $1 | cut -d "/" -f7 | cut -c 3-)

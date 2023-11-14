@@ -125,6 +125,7 @@ alias nrkmp3='stopradio; vlc -Idummy https://lyd.nrk.no/nrk_radio_mp3_aac_h NUL 
 
 # Spotify
 alias jamc='spotify play uri spotify:playlist:37i9dQZF1DZ06evO2BbbSy'
+alias playfocus='spotify play uri spotify:album:1I9fdXBGNUIe70ainOtQAz'
 
 # Podcasts
 alias podcasts="newsboat -u ~/.newsboat/podcasts -c ~/.newsboat/podcast-cache.db"
