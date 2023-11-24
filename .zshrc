@@ -20,7 +20,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="powerlevel10k/powerlevel10k"
-source $HOMEBREW_PREFIX/opt/powerlevel10k/powerlevel10k.zsh-theme
+source $HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -167,3 +167,6 @@ if [ -x "$(command -v ng)" ]; then
 fi
 
 [ -f $HOME/.docker/init-zsh.sh ] && source $HOME/.docker/init-zsh.sh # Added by Docker Desktop
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
