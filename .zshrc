@@ -90,6 +90,7 @@ plugins=(
   pip
   vscode
   web-search
+  yarn
   z
 )
 
@@ -154,8 +155,6 @@ source $ZSHRC_PATH/mixins/functions
 if [ -e $ZSHRC_PATH/mixins/private ]; then
   source $ZSHRC_PATH/mixins/private
 fi
-
-source $ZSHRC_PATH/mixins/p10k.zsh
 
 # /usr/local/opt/fzf/install
 [ -f $ZSHRC_PATH/mixins/.fzf.zsh ] && source $ZSHRC_PATH/mixins/.fzf.zsh
