@@ -13,7 +13,8 @@ alias npmgL0='npm ls -g --depth=0'
 # Folder shortcuts
 alias dotfiles='cd $HOME/dotfiles/'
 alias dropbox='cd $HOME/Dropbox/'
-alias gitbox='cd $HOME/Gitbox/'         # Where I store downloaded github repos
+export GITBOX=$HOME/Gitbox
+alias gitbox='cd $GITBOX'         # Where I store downloaded github repos
 
 # Git
 alias glr='git submodule update --init --recursive'

@@ -40,3 +40,7 @@ export GPG_TTY=$(tty)
 # dotnet SDK
 export MSBuildSDKsPath="/usr/local/opt/dotnet/libexec/sdk/$(dotnet --version)/Sdks"
 export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
+
+# Fix Pupeteer Error
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+export PUPPETEER_EXECUTABLE_PATH=`which chromium`
