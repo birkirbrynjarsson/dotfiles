@@ -16,13 +16,13 @@ export LC_ALL=en_US.UTF-8
 PATH="$HOME/Dropbox/.bin:$PATH"
 
 # SqlPackage installation
-PATH="$PATH:$HOME/Dropbox/.bin/sqlpackage"
+# PATH="$PATH:$HOME/Dropbox/.bin/sqlpackage"
 
 # OpenVPN +
 PATH=/usr/local/sbin:$PATH
 
 # Add .NET Core SDK tools
-PATH="$PATH:$HOME/.dotnet/tools"
+# PATH="$PATH:$HOME/.dotnet/tools"
 
 export PATH
 
@@ -38,8 +38,8 @@ export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 export GPG_TTY=$(tty)
 
 # dotnet SDK
-export MSBuildSDKsPath="/usr/local/opt/dotnet/libexec/sdk/$(dotnet --version)/Sdks"
-export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
+# export MSBuildSDKsPath="/usr/local/opt/dotnet/libexec/sdk/$(dotnet --version)/Sdks"
+export DOTNET_ROOT="$HOMEBREW_PREFIX/opt/dotnet/libexec"
 
 # Fix Pupeteer Error
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
