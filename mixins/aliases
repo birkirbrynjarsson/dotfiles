@@ -8,7 +8,6 @@ alias ll="exa -alh"
 alias tree="exa --tree"
 alias cat="bat"
 alias cd="z"
-alias zz="z -"
 
 alias f='open -a Finder ./' # Also aliased to 'ofd' from osx plugin
 
