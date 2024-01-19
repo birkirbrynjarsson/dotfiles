@@ -77,7 +77,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   brew
   colored-man-pages
-  colorize
   command-not-found
   common-aliases
   docker
@@ -175,3 +174,11 @@ fi
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+# pnpm
+export PNPM_HOME="/Users/birkir/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

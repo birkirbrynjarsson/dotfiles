@@ -2,8 +2,13 @@
 
 alias zshreload='source ~/.zshrc'
 
-alias lc='colorls --gs --sd -lA'
-alias lcc='colorls --gs --sd --tree'
+# Override default commands
+alias ls="exa"
+alias ll="exa -alh"
+alias tree="exa --tree"
+alias cat="bat"
+alias cd="z"
+alias zz="z -"
 
 alias f='open -a Finder ./' # Also aliased to 'ofd' from osx plugin
 
