@@ -90,6 +90,8 @@ alias svt2='streamlink https://www.svtplay.se/kanaler/svt2 best NUL &'
 alias dr1='streamlink https://www.dr.dk/tv/live/dr1 best NUL &'
 alias dr2='streamlink https://www.dr.dk/tv/live/dr2 best NUL &'
 alias dr3='streamlink https://www.dr.dk/tv/live/dr3 best NUL &'
+alias nrk='streamlink https://tv.nrk.no/direkte/nrk1 best NUL &'
+alias nrk2='streamlink https://tv.nrk.no/direkte/nrk2 best NUL &'
 alias bloomberg='streamlink https://www.bloomberg.com/live/europe best NUL &'
 alias aljazeera='streamlink https://www.aljazeera.com/live/ best NUL &'
 
