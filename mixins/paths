@@ -24,8 +24,6 @@ PATH=/usr/local/sbin:$PATH
 # Add .NET Core SDK tools
 # PATH="$PATH:$HOME/.dotnet/tools"
 
-export PATH
-
 # NVM Setup
 export NVM_DIR="$HOME/.nvm"
 source $(brew --prefix nvm)/nvm.sh
@@ -39,8 +37,12 @@ export GPG_TTY=$(tty)
 
 # dotnet SDK
 # export MSBuildSDKsPath="/usr/local/opt/dotnet/libexec/sdk/$(dotnet --version)/Sdks"
-export DOTNET_ROOT="$HOMEBREW_PREFIX/opt/dotnet/libexec"
+# export DOTNET_ROOT="$HOMEBREW_PREFIX/opt/dotnet/libexec"
+export DOTNET_ROOT="$HOME/.dotnet"
+PATH="$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools"
 
 # Fix Pupeteer Error
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+
+export PATH
