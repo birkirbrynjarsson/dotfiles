@@ -3,9 +3,9 @@
 alias zshreload='source ~/.zshrc'
 
 # Override default commands
-alias ls="exa"
-alias ll="exa -alh"
-alias tree="exa --tree"
+alias ls="eza"
+alias ll="eza -alh"
+alias tree="eza --tree"
 alias cat="bat"
 
 alias f='open -a Finder ./' # Also aliased to 'ofd' from osx plugin
