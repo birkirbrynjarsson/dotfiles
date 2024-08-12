@@ -29,6 +29,9 @@ alias gbdr='git push origin --delete'
 # List large blobs in repository sorted >1MiB
 gitlarge() { git rev-list --objects --all | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | sed -n 's/^blob //p' | awk '$2 >= 2^20' | sort --numeric-sort --key=2 | cut -c 1-12,41- | $(command -v gnumfmt || echo numfmt) --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest }
 
+# Sync repositores registered in ~/.mrconfig
+alias mrup='(cd $HOME && mr -j5 update)'
+
 # Python related
 alias prp="pipenv run python"
 
