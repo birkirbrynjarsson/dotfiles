@@ -158,6 +158,8 @@ ln -svf ~/dotfiles/neofetch/config.conf ~/.config/neofetch/
 ln -svf ~/dotfiles/.vimrc ~/
 # Symlink .zshrc
 ln -svf ~/dotfiles/.zshrc ~/
+# Symlink mr
+ln -svf ~/dotfiles/.mrconfig ~/
 source ~/.zshrc
 ```
 
