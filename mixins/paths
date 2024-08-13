@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+# Brewfile
+export HOMEBREW_BUNDLE_FILE="$HOME/dotfiles/Brewfile"
+export HOMEBREW_BUNDLE_FILE_GLOBAL="$HOME/dotfiles/Brewfile"
+
 # Ruby, rbenv
 RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl)"
 eval "$(rbenv init -)"
