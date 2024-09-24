@@ -12,7 +12,10 @@ eval "$(rbenv init -)"
 PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
+# Load pyenv-virtualenv automatically
+if which pyenv-virtualenv-init > /dev/null; then
+  eval "$(pyenv virtualenv-init -)"
+fi
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
