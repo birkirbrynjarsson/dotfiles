@@ -30,6 +30,17 @@ ghget() {
     cd $REPO
 }
 
+ghlist() {
+    gh repo list $1 --limit 1000 --json nameWithOwner,isArchived --jq '.[] | select(.isArchived == false) | .nameWithOwner'
+}
+
+ghgetall() {
+    ghlist $1 |
+    while read repo; do
+        ghget "$repo"
+    done
+}
+
 # Get gitignore file from toptap, gitignore.io
 gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ }
 
