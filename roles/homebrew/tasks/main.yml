@@ -1,0 +1,48 @@
+---
+- name: Check if brew exists
+  ansible.builtin.command: which brew
+  register: brew_which
+  changed_when: false
+  failed_when: false
+  tags: [always]
+
+- name: Install Homebrew (if missing)
+  ansible.builtin.shell: |
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  args:
+    creates: /opt/homebrew/bin/brew
+  when: brew_which.rc != 0
+  tags: [always]
+
+- name: Ensure brew is on PATH for this run (Apple Silicon default)
+  ansible.builtin.set_fact:
+    brew_path: "/opt/homebrew/bin:/usr/local/bin:{{ lookup('env', 'PATH') }}"
+  tags: [always]
+
+- name: Update Homebrew
+  ansible.builtin.command: brew update
+  changed_when: false
+  tags: [always]
+
+- name: Install packages from Brewfile
+  ansible.builtin.command: brew bundle --file="{{ role_path }}/files/Brewfile"
+  register: brew_bundle
+  changed_when: "'Installing' in brew_bundle.stdout or 'Installing' in brew_bundle.stderr"
+
+# Optional maintenance (off by default)
+- name: Homebrew maintenance
+  ansible.builtin.import_tasks: upgrade.yml
+  tags:
+    - brew-upgrade
+
+# Optional cleanup anything not in Brewfile
+- name: Cleanup anything not in Brewfile (optional)
+  ansible.builtin.import_tasks: cleanup.yml
+  tags:
+    - brew-cleanup
+
+# Optional regeneration of Brewfile from current machine setup
+- name: Regenerate Brewfile from currently installed packages
+  ansible.builtin.import_tasks: dump.yml
+  tags:
+    - brew-dump

@@ -1,0 +1,8 @@
+---
+- name: Configure my Mac
+  hosts: localhost
+  connection: local
+  gather_facts: true
+
+  roles:
+    - homebrew

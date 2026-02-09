@@ -1,0 +1,3 @@
+---
+- name: Dump installed brews/casks into dotfiles Brewfile
+  ansible.builtin.command: brew bundle dump --file="{{ role_path }}/files/Brewfile" --force

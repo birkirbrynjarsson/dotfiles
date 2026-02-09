@@ -1,9 +1,0 @@
-- name: Bootstrap local workstation
-  hosts: localhost
-  gather_facts: no
-  tasks:
-  - name: Install Homebrew
-    become: yes
-    command: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    args:
-      creates: /opt/homebrew/bin/brew

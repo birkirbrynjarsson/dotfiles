@@ -1,0 +1,8 @@
+---
+- name: Upgrade all Homebrew packages
+  ansible.builtin.command: brew upgrade
+  changed_when: true
+
+- name: Cleanup Homebrew
+  ansible.builtin.command: brew cleanup
+  changed_when: true

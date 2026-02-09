@@ -1,0 +1,3 @@
+---
+- name: Cleanup anything not in Brewfile
+  ansible.builtin.command: brew bundle cleanup --file="{{ role_path }}/files/Brewfile" --force
