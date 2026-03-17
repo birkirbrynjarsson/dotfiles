@@ -110,12 +110,11 @@ cask "transmission"
 cask "transmit"
 cask "visual-studio-code"
 cask "vlc"
-mas "Bear", id: 1091189122
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "Magnet", id: 441258766
-mas "Spark", id: 1176895641
-mas "Xcode", id: 497799835
+# mas "GarageBand", id: 682658836
+# mas "iMovie", id: 408981434
+# mas "Magnet", id: 441258766
+# mas "Spark", id: 1176895641
+# mas "Xcode", id: 497799835
 vscode "angular.ng-template"
 vscode "bradlc.vscode-tailwindcss"
 vscode "dbaeumer.vscode-eslint"

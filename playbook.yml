@@ -5,4 +5,11 @@
   gather_facts: true
 
   roles:
-    - homebrew
+    - role: homebrew
+      tags: homebrew
+    - role: git_config
+      tags: git
+    - role: macos_defaults
+      tags: macos
+    - role: dotfiles
+      tags: dotfiles

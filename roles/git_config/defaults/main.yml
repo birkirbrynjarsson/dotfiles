@@ -1,0 +1,24 @@
+---
+# Identity
+git_user_name: "Birkir Brynjarsson"
+git_user_email: "birkir@birkir.is"
+git_github_user: "birkirbrynjarsson"
+
+# Optional: commit signing
+git_sign_commits: true
+git_signing_key: "2399BA3D4D89995D" # e.g. GPG key id or SSH signing key path depending on setup
+git_gpg_format: "openpgp" # set to "ssh" if using SSH signing (optional)
+git_gpg_program: "/opt/homebrew/bin/gpg"
+
+# Core behavior
+git_default_branch: main
+git_editor: "vim"
+git_pull_rebase: false
+git_init_default_branch: true
+
+# macOS credential helper
+git_use_osxkeychain: true
+
+# Global ignore file
+git_use_global_gitignore: true
+git_global_gitignore_path: "{{ ansible_facts['env']['HOME'] }}/.gitignore"

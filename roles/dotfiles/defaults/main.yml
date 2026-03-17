@@ -1,0 +1,18 @@
+---
+dotfiles_repo_root: "{{ playbook_dir }}"
+
+dotfiles_backup_existing: true
+dotfiles_backup_suffix: ".pre-ansible-backup"
+
+dotfiles_links:
+  - src: "{{ dotfiles_repo_root }}/home/.zshrc"
+    dest: "{{ ansible_facts['user_dir'] }}/.zshrc"
+
+  - src: "{{ dotfiles_repo_root }}/home/.vimrc"
+    dest: "{{ ansible_facts['user_dir'] }}/.vimrc"
+
+  - src: "{{ dotfiles_repo_root }}/home/.p10k.zsh"
+    dest: "{{ ansible_facts['user_dir'] }}/.p10k.zsh"
+
+  # - src: "{{ dotfiles_repo_root }}/tmux/.tmux.conf"
+  #   dest: "{{ ansible_facts['user_dir'] }}/.tmux.conf"

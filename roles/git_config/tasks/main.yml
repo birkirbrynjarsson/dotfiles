@@ -1,0 +1,95 @@
+---
+- name: Fail if git_user_name or git_user_email not set
+  ansible.builtin.fail:
+    msg: "Set git_user_name and git_user_email (group_vars/host_vars or -e)."
+  when: git_user_name | length == 0 or git_user_email | length == 0
+
+- name: Ensure ~/.config/git exists (for global ignore)
+  ansible.builtin.file:
+    path: "{{ ansible_facts['env']['HOME'] }}/.config/git"
+    state: directory
+    mode: "0755"
+  when: git_use_global_gitignore
+
+- name: Install global gitignore file
+  ansible.builtin.template:
+    src: gitignore_global.j2
+    dest: "{{ git_global_gitignore_path }}"
+    mode: "0644"
+  when: git_use_global_gitignore
+
+# --- Global Git config (idempotent) ---
+
+- name: Set Git user.name
+  ansible.builtin.git_config:
+    scope: global
+    name: user.name
+    value: "{{ git_user_name }}"
+
+- name: Set Git user.email
+  ansible.builtin.git_config:
+    scope: global
+    name: user.email
+    value: "{{ git_user_email }}"
+
+- name: Set GitHub user
+  ansible.builtin.git_config:
+    scope: global
+    name: github.user
+    value: "{{ git_github_user }}"
+
+- name: Set default branch for new repos (init.defaultBranch)
+  ansible.builtin.git_config:
+    scope: global
+    name: init.defaultBranch
+    value: "{{ git_default_branch }}"
+  when: git_init_default_branch
+
+- name: Set core.editor
+  ansible.builtin.git_config:
+    scope: global
+    name: core.editor
+    value: "{{ git_editor }}"
+
+- name: Use a global gitignore file
+  ansible.builtin.git_config:
+    scope: global
+    name: core.excludesFile
+    value: "{{ git_global_gitignore_path }}"
+  when: git_use_global_gitignore
+
+- name: Configure pull.rebase
+  ansible.builtin.git_config:
+    scope: global
+    name: pull.rebase
+    value: "{{ 'true' if git_pull_rebase else 'false' }}"
+
+- name: Configure credential helper (macOS Keychain)
+  ansible.builtin.git_config:
+    scope: global
+    name: credential.helper
+    value: osxkeychain
+  when: git_use_osxkeychain
+
+# --- Optional signing ---
+
+- name: Enable commit signing
+  ansible.builtin.git_config:
+    scope: global
+    name: commit.gpgsign
+    value: "true"
+  when: git_sign_commits
+
+- name: Set signing key
+  ansible.builtin.git_config:
+    scope: global
+    name: user.signingkey
+    value: "{{ git_signing_key }}"
+  when: git_sign_commits and (git_signing_key | length > 0)
+
+- name: Set gpg.format (optional, e.g. ssh)
+  ansible.builtin.git_config:
+    scope: global
+    name: gpg.format
+    value: "{{ git_gpg_format }}"
+  when: git_sign_commits and (git_gpg_format | length > 0)

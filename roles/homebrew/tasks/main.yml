@@ -4,7 +4,6 @@
   register: brew_which
   changed_when: false
   failed_when: false
-  tags: [always]
 
 - name: Install Homebrew (if missing)
   ansible.builtin.shell: |
@@ -12,17 +11,14 @@
   args:
     creates: /opt/homebrew/bin/brew
   when: brew_which.rc != 0
-  tags: [always]
 
 - name: Ensure brew is on PATH for this run (Apple Silicon default)
   ansible.builtin.set_fact:
     brew_path: "/opt/homebrew/bin:/usr/local/bin:{{ lookup('env', 'PATH') }}"
-  tags: [always]
 
 - name: Update Homebrew
   ansible.builtin.command: brew update
   changed_when: false
-  tags: [always]
 
 - name: Install packages from Brewfile
   ansible.builtin.command: brew bundle --file="{{ role_path }}/files/Brewfile"
@@ -32,17 +28,20 @@
 # Optional maintenance (off by default)
 - name: Homebrew maintenance
   ansible.builtin.import_tasks: upgrade.yml
+  when: "'brew-upgrade' in ansible_run_tags"
   tags:
     - brew-upgrade
 
 # Optional cleanup anything not in Brewfile
 - name: Cleanup anything not in Brewfile (optional)
   ansible.builtin.import_tasks: cleanup.yml
+  when: "'brew-cleanup' in ansible_run_tags"
   tags:
     - brew-cleanup
 
 # Optional regeneration of Brewfile from current machine setup
 - name: Regenerate Brewfile from currently installed packages
   ansible.builtin.import_tasks: dump.yml
+  when: "'brew-dump' in ansible_run_tags"
   tags:
     - brew-dump

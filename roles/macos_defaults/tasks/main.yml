@@ -1,0 +1,55 @@
+---
+- name: Disable boot sound
+  ansible.builtin.command: nvram SystemAudioVolume=" "
+  become: true
+  changed_when: true
+  tags:
+    - macos
+    - sound
+
+- name: Configure Dock defaults
+  ansible.builtin.command: "{{ item }}"
+  loop:
+    - defaults write com.apple.dock tilesize -int 48
+    - defaults write com.apple.dock autohide -bool true
+    - defaults write com.apple.dock showhidden -bool yes
+    - defaults write com.apple.dock show-recents -int 0
+    - defaults write com.apple.dock wvous-tl-corner -int 13
+    - defaults write com.apple.dock wvous-tl-modifier -int 0
+    - defaults write com.apple.dock wvous-tr-corner -int 4
+    - defaults write com.apple.dock wvous-tr-modifier -int 0
+    - defaults write com.apple.dock wvous-bl-corner -int 2
+    - defaults write com.apple.dock wvous-bl-modifier -int 0
+
+- name: Restart Dock
+  ansible.builtin.command: killall Dock
+  changed_when: true
+  failed_when: false
+
+- name: Configure Finder defaults
+  ansible.builtin.command: "{{ item }}"
+  loop:
+    - defaults write com.apple.finder ShowPathbar -bool true
+    - defaults write com.apple.finder ShowStatusBar -bool true
+    - defaults write com.apple.finder NewWindowTarget -string PfLo
+    - defaults write com.apple.finder NewWindowTargetPath -string "file://{{ ansible_facts['user_dir'] }}/"
+    - defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
+    - defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
+    - defaults write com.apple.finder _FXSortFoldersFirst -bool true
+    - defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
+    - defaults write com.apple.finder FXPreferredViewStyle -string clmv
+  changed_when: true
+
+- name: Restart Finder
+  ansible.builtin.command: killall Finder
+  changed_when: true
+  failed_when: false
+
+- name: Configure global macOS defaults
+  ansible.builtin.command: "{{ item }}"
+  loop:
+    - defaults write NSGlobalDomain KeyRepeat -int 2
+    - defaults write NSGlobalDomain InitialKeyRepeat -int 10
+    - defaults write NSGlobalDomain AppleInterfaceStyle -string Dark
+    - defaults write NSGlobalDomain com.apple.sound.beep.flash -int 1
+  changed_when: true
