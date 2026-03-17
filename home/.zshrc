@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-# neofetch
+# fastfetch
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -147,19 +147,10 @@ export EDITOR=/usr/bin/vim
 
 DEFAULT_USER=`whoami`
 
-ZSHRC_PATH=$(dirname "$(readlink "${(%):-%N}")")
-
-source $ZSHRC_PATH/mixins/paths
-source $ZSHRC_PATH/mixins/aliases
-source $ZSHRC_PATH/mixins/functions
-
-if [ -e $ZSHRC_PATH/mixins/private ]; then
-  source $ZSHRC_PATH/mixins/private
-fi
-
-# /usr/local/opt/fzf/install
-[ -f $ZSHRC_PATH/mixins/.fzf.zsh ] && source $ZSHRC_PATH/mixins/.fzf.zsh
-
+# ZSHRC_PATH=$(dirname "$(readlink "${(%):-%N}")")
+for file in "$HOME/dotfiles/zsh"/*.zsh; do
+  [ -r "$file" ] && source "$file"
+done
 
 # Load Angular CLI autocompletion.
 if [ -x "$(command -v ng)" ]; then
