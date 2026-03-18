@@ -43,3 +43,10 @@
     state: link
     force: true
   loop: "{{ dotfiles_links }}"
+
+- name: Install decrypted .shpotify.cfg in home directory
+  ansible.builtin.copy:
+    src: home/.shpotify.cfg.vault
+    dest: "{{ ansible_facts['user_dir'] }}/.shpotify.cfg"
+    owner: "{{ ansible_facts['user_id'] }}"
+    mode: "0600"
