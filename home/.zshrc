@@ -147,6 +147,9 @@ export EDITOR=/usr/bin/vim
 
 DEFAULT_USER=`whoami`
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 # ZSHRC_PATH=$(dirname "$(readlink "${(%):-%N}")")
 for file in "$HOME/dotfiles/zsh"/*.zsh; do
   [ -r "$file" ] && source "$file"
