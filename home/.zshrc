@@ -152,6 +152,8 @@ for file in "$HOME/dotfiles/zsh"/*.zsh; do
   [ -r "$file" ] && source "$file"
 done
 
+[ -f ~/.private.zsh ] && source ~/.private.zsh
+
 # Load Angular CLI autocompletion.
 if [ -x "$(command -v ng)" ]; then
   source <(ng completion script)
