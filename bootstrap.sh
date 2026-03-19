@@ -32,4 +32,4 @@ fi
 
 # 4) Run your real playbook
 echo "🚀 Running Ansible playbook..."
-ansible-playbook -i "localhost," -c local playbook.yml -K
+ansible-playbook -i "localhost," -c local playbook.yml --ask-vault-pass -K

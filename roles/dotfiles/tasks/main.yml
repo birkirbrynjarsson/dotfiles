@@ -57,3 +57,9 @@
     dest: "{{ ansible_facts['user_dir'] }}/.shpotify.cfg"
     owner: "{{ ansible_facts['user_id'] }}"
     mode: "0600"
+
+# Copy vaulted SSH key
+- name: Install vaulted SSH Key
+  ansible.builtin.import_tasks: ssh.yml
+  tags:
+    - ssh
