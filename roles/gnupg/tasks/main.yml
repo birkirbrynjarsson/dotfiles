@@ -1,0 +1,71 @@
+---
+- name: Ensure ~/.gnupg exists
+  ansible.builtin.file:
+    path: "{{ ansible_facts['user_dir'] }}/.gnupg"
+    state: directory
+    owner: "{{ ansible_facts['user_id'] }}"
+    mode: "0700"
+
+- name: Install gpg.conf
+  ansible.builtin.copy:
+    src: gpg.conf
+    dest: "{{ ansible_facts['user_dir'] }}/.gnupg/gpg.conf"
+    owner: "{{ ansible_facts['user_id'] }}"
+    mode: "0600"
+
+- name: Install gpg-agent.conf
+  ansible.builtin.copy:
+    src: gpg-agent.conf
+    dest: "{{ ansible_facts['user_dir'] }}/.gnupg/gpg-agent.conf"
+    owner: "{{ ansible_facts['user_id'] }}"
+    mode: "0600"
+
+- name: Copy public key export
+  ansible.builtin.copy:
+    src: public.asc
+    dest: "{{ ansible_facts['user_dir'] }}/.gnupg/public.asc"
+    owner: "{{ ansible_facts['user_id'] }}"
+    mode: "0644"
+
+- name: Copy ownertrust export
+  ansible.builtin.copy:
+    src: ownertrust.txt
+    dest: "{{ ansible_facts['user_dir'] }}/.gnupg/ownertrust.txt"
+    owner: "{{ ansible_facts['user_id'] }}"
+    mode: "0600"
+
+- name: Copy vaulted secret key export
+  ansible.builtin.copy:
+    src: secret.asc.vault
+    dest: "{{ ansible_facts['user_dir'] }}/.gnupg/secret.asc"
+    owner: "{{ ansible_facts['user_id'] }}"
+    mode: "0600"
+
+- name: Import public key
+  ansible.builtin.command:
+    cmd: gpg --batch --import "{{ ansible_facts['user_dir'] }}/.gnupg/public.asc"
+  register: gpg_public_import
+  changed_when: "'imported' in gpg_public_import.stderr or 'processed' in gpg_public_import.stderr"
+
+- name: Import secret key
+  ansible.builtin.command:
+    cmd: gpg --batch --import "{{ ansible_facts['user_dir'] }}/.gnupg/secret.asc"
+  register: gpg_secret_import
+  changed_when: "'secret keys imported' in gpg_secret_import.stderr or 'processed' in gpg_secret_import.stderr"
+
+- name: Import ownertrust
+  ansible.builtin.command:
+    cmd: gpg --import-ownertrust "{{ ansible_facts['user_dir'] }}/.gnupg/ownertrust.txt"
+  register: gpg_ownertrust_import
+  changed_when: false
+
+- name: Remove temporary secret key export
+  ansible.builtin.file:
+    path: "{{ ansible_facts['user_dir'] }}/.gnupg/secret.asc"
+    state: absent
+
+- name: Kill gpg-agent so config changes take effect
+  ansible.builtin.command:
+    cmd: gpgconf --kill gpg-agent
+  changed_when: false
+  failed_when: false

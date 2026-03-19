@@ -15,3 +15,5 @@
       tags: dotfiles
     - role: ssh
       tags: ssh
+    - role: gnupg
+      tags: gnupg
