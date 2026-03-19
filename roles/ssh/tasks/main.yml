@@ -7,14 +7,14 @@
 
 - name: Install vaulted SSH private key
   ansible.builtin.copy:
-    src: home/ssh/id_rsa.vault
+    src: id_rsa.vault
     dest: "{{ ansible_facts['user_dir'] }}/.ssh/id_rsa"
     owner: "{{ ansible_facts['user_id'] }}"
     mode: "0600"
 
 - name: Copy public SSH key
   ansible.builtin.copy:
-    src: home/ssh/id_rsa.pub
+    src: id_rsa.pub
     dest: "{{ ansible_facts['user_dir'] }}/.ssh/id_rsa.pub"
     owner: "{{ ansible_facts['user_id'] }}"
     mode: "0644"

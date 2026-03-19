@@ -13,3 +13,5 @@
       tags: macos
     - role: dotfiles
       tags: dotfiles
+    - role: ssh
+      tags: ssh
