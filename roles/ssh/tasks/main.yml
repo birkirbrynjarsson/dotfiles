@@ -18,3 +18,10 @@
     dest: "{{ ansible_facts['user_dir'] }}/.ssh/id_rsa.pub"
     owner: "{{ ansible_facts['user_id'] }}"
     mode: "0644"
+
+- name: Copy SSH config
+  ansible.builtin.copy:
+    src: config
+    dest: "{{ ansible_facts['user_dir'] }}/.ssh/config"
+    owner: "{{ ansible_facts['user_id'] }}"
+    mode: "0644"
