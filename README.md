@@ -1,26 +1,22 @@
 # Mac setup and dotfiles
-Tools and instructions to speed up and automate my setup and configurations after clean re-installation of MacOS.
-
-
-## Requirements
-MacOS, the following setup has a clean installation in mind.
-
+Tools and instructions to automate and maintain my setup and configurations after clean re-installation of MacOS.
 
 ## Make your own
 If you want to make your own setup based on this one I recommend the following steps:
 
 - Fork the repository
-- Edit the Brewfile
-  - Some apps however are required for later steps (e.g. nerd-font, iTerm2, mas, nvm, neofetch, jq, rbenv, p10k, zsh-*)
-- Edit settings.sh to suit your own preferences
-- Edit mixin/aliases
+- Edit the Brewfile found in `roles/homebrew/files`
+  - Some apps however are required for later steps
+- Edit the git_config role with your own user and settings in mind
+- Edit or remove the macos_defaults according to your own preferences
+- Edit zsh exports, aliases and functions found in the `zsh/` folder
   - PS. before you start adding your own aliases I recommend running `alias` and looking at what is already there, a lot of stuff comes with the Oh-My-Zsh plugins.
-- Follow the manual setup guide
+- Remove or update the ssh and gnupg roles with your own keys
+- Remove any other .vault file and the task using it. This is encrypted data which is unusable without the password.
 
 
-# Manual Setup
-~~Unfortunately~~ it's a manual process, there's no single script that automates everything.  
-However that's all splendid, I enjoy going through the steps as well as maintaining this documentation.
+# Automation using Ansible
+This dotfiles setup uses Ansible, so the process is automated. Just make `bootstrap.sh` executable and run it.
 
 Install the **Xcode Command Line Tools**
 
@@ -28,17 +24,7 @@ Install the **Xcode Command Line Tools**
 xcode-select --install
 ```
 
-## Configure Git
-
-```bash
-git config --global user.name "Birkir Brynjarsson"  
-git config --global user.email "*******@gmail.com"  
-git config --global github.user birkirbrynjarsson
-git config --global core.excludesfile ~/.gitignore
-echo .DS_Store >> ~/.gitignore
-```
-
-## Clone the repository
+## Clone/download the repository
 Clone the repository and hide it in Finder with `chflags`
 
 ```bash
@@ -48,54 +34,25 @@ chflags hidden dotfiles
 cd ~/dotfiles
 ```
 
-
-## Install Applications
-
-Install [**Homebrew**](https://brew.sh/)
-
+## Run bootstrap.sh
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+chmod +x bootstrap.sh
+./bootstrap.sh
 ```
 
-Allow apps downloaded from anywhere before installing with Brew
+### Caveats
 
+If you get the error 'compaudit insecure directories', then run the following:
 ```bash
-sudo spctl --master-disable
+compaudit | xargs chmod g-w
+compaudit | xargs chmod o-w
 ```
 
-Install applications from **Brewfile** and optionally a secondary file, `Brewfile2`
 
-```bash
-cd ~/dotfiles
-brew bundle -v
-```
+# Additional steps/information
 
 ## SSH keys
-
-With **1password** installed I get my **SSH-keys** from saved documents and move to `~/.ssh` and make sure permissions are correct
-
-```bash
-chmod 600 ~/.ssh/id_rsa
-chmod 600 ~/.ssh/id_rsa.pub
-chmod 700 ~/.ssh
-```
-
-Create `~/.ssh/config` and modify it to automatically load keys into ssh-agent and store passphrases in keychain.
-
-```bash
-touch ~/.ssh/config
-# Add to following to the config file
-Host *
-  AddKeysToAgent yes
-  UseKeychain yes
-  IdentityFile ~/.ssh/id_rsa
-```
-
-Add the private key to the `ssh-agent` and store the potential passphrase in the keychain.
-
-```bash
-ssh-add -K ~/.ssh/id_rsa
-```
+Private SSH keys are stored encrypted and installed with ansible.
 
 If the public **SSH-key** has been added to [GitHub](https://github.com/settings/ssh), the connection can be tested
 
@@ -103,74 +60,10 @@ If the public **SSH-key** has been added to [GitHub](https://github.com/settings
 ssh -T git@github.com
 ```
 
-### GPG keys, Github
+## GPG keys, Github
+GPG keys are encrypted with ansible-vault and installed with ansible. The use of GPG keys to verify the user is set in the git_config playbook.
 
-Setup `~/.gnupg` folder from backup, checkout this [gist](https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e) for how to GPG.
-
-```bash
-gpg -k --keyid-format LONG # Copy the key for next step
-git config --global user.signingkey <KEY>
-git config --global commit.gpgsign true
-git config --global gpg.program $(which gpg)
-echo "pinentry-program /usr/local/bin/pinentry-mac" > ~/.gnupg/gpg-agent.conf
-echo "use-agent" > ~/.gnupg/gpg.conf
-```
-
-
-## MacOS system preferences
-
-Run `settings.sh` to apply custom preferences for Finder, Menu bar, Dock etc.
-> These settings are what is most likely to break as the preferences and corresponding files change between Mac OS versions. To be safe, skip running this script (except the last osascript step in the file that updates the look of terminal.app) and change settings manually.
-
-```bash
-cd ~/dotfiles
-chmod +x settings.sh
-./settings.sh
-```
-
-
-## Make the shell awesome with iTerm2, Zsh, Oh-My-Zsh, Powerlevel10k & neofetch
-
-![iTerm2 Screenshot](https://i.imgur.com/NLdVDPS.png "iTerm2 after customization")
-
-Set preferences for iTerm2
-
-```bash
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-```
-
-Install **[Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)**
-
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-```
-
-### Zsh Profile +
-
-Source the ZSH profile and other config files (optionally restart Terminal/iTerm2 after creating the symlink)
-
-```bash
-# Symlink neofetch config and .vimrc
-touch ~/.hushlogin
-mkdir -p ~/.config/neofetch
-ln -svf ~/dotfiles/neofetch/config.conf ~/.config/neofetch/
-ln -svf ~/dotfiles/.vimrc ~/
-# Symlink .zshrc
-ln -svf ~/dotfiles/.zshrc ~/
-# Symlink mr
-ln -svf ~/dotfiles/.mrconfig ~/
-source ~/.zshrc
-```
-
-If you get compaudit insecure directories error run:
-```bash
-compaudit | xargs chmod g-w
-compaudit | xargs chmod o-w
-```
-
-
-### Ruby and Gems
+## Ruby and Gems
 
 Install latest Ruby version and `colorls` for colorful `ls` with icons. Aliased to `lc` and `lcc`
 
@@ -194,12 +87,6 @@ mkdir ~/.nvm
 nvm install --lts
 ```
 
-Install global packages from `npmfile`
-
-```bash
-cat ~/dotfiles/npmfile | xargs -L1 npm i -g > /dev/null
-```
-
 
 ## Python
 With `pyenv` installed, get the latest version of python
@@ -212,18 +99,6 @@ pyenv global $PYTHON_LATEST
 pip install --upgrade pip
 ```
 
-## Visual Studio Code settings
-I sync plugins and settings to Visual Studio Code with the [*Settings sync*](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) plugin. It requires a GitHub API Token with gist access. Check out the [configuration instructions](https://shanalikhan.github.io/2016/07/31/Visual-Studio-code-sync-setting-edit-manually.html). I store my GitHub API Token in a secure note with 1password.
-
-My currently configured plugins can be found with:
-
-```bash
-curl -s https://api.github.com/gists/8b47741d950a86e46222eb8bfc293a9a \
-| jq '.files."extensions.json".raw_url' \
-| tr -d \" \
-| xargs curl -s \
-| grep name
-```
 
 ## openpyn - NordVPN cli
 
@@ -235,29 +110,12 @@ sudo openpyn --init
 ```
 
 
-## Dropbox Desktop sync
-
-Sync your Desktop between workstations, further instructions [here](https://www.imore.com/how-sync-your-documents-desktop-and-any-other-folder-dropbox)
-
-```bash
-ln -sv ~/Desktop ~/Dropbox/
-```
-
-
 ## Private Config files
 
-I keep some config files, shell aliases and application preferences in a [private branch](https://24ways.org/2013/keeping-parts-of-your-codebase-private-on-github/) of this repository and copy them into their designated destination after installing the apps. 
+~~I keep some config files, shell aliases and application preferences in a [private branch]~~(https://24ways.org/2013/keeping-parts-of-your-codebase-private-on-github/) of this repository and copy them into their designated destination after installing the apps. 
 These files might contain Software Licenses, network addresses and other private data.
+Since March 2026 this has been moved to using ansible-vault.
 
-### Spotify CLI
-
-The `spotify` cli requires configuration.
-Add CLIENT_ID and CLIENT_SECRET to `~/.shpotify.cfg`, get this information by [creating an 'application'](https://developer.spotify.com/my-applications/#!/applications/create).
-
-```bash
-echo 'CLIENT_ID="urCl13nt1D"' > ~/.shpotify.cfg
-echo 'CLIENT_SECRET="urCl13nt53cret"' >> ~/.shpotify.cfg
-```
 
 ## Other Software
 Here's a list of other software that doesn't have a homebrew package
