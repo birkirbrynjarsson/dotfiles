@@ -1,5 +1,63 @@
-# Mac setup and dotfiles
-Tools and instructions to automate and maintain my setup and configurations after clean re-installation of MacOS.
+# dotfiles
+
+My personal macOS configuration and dotfiles, managed with Ansible.
+
+## Overview
+
+This repository automates the setup and configuration of a macOS system using Ansible. It manages:
+
+- **Homebrew** - Package management and application installation
+- **Git** - Global Git configuration and SSH keys
+- **GPG** - GNU Privacy Guard setup and key management
+- **SSH** - SSH configuration and key management
+- **macOS Defaults** - System preferences and settings
+- **Dotfiles** - Shell configuration files (.zshrc, .vimrc, etc.)
+
+## Quick Start
+
+```bash
+git clone https://github.com/birkir/dotfiles.git
+cd dotfiles
+bash bootstrap.sh
+```
+
+The bootstrap script will:
+1. Install Xcode Command Line Tools (if needed)
+2. Install Homebrew
+3. Install Ansible
+4. Run the Ansible playbook
+
+## Structure
+
+```
+roles/              # Ansible roles for configuration
+home/               # Dotfiles for home directory
+zsh/                # Zsh configuration files
+playbook.yml        # Main Ansible playbook
+bootstrap.sh        # Bootstrap script
+```
+
+## Tags
+
+Run specific roles with tags:
+
+```bash
+ansible-playbook playbook.yml --tags homebrew -K
+ansible-playbook playbook.yml --tags git
+ansible-playbook playbook.yml --tags ssh --ask-vault-pass
+```
+
+Use the ansible flags `-K` to become sudo and `--ask-vault-pass` to decrypt the vaulted files used in some roles.
+
+## Vault
+
+Sensitive files are encrypted with Ansible Vault. You'll be prompted for the vault password during setup.
+
+## Requirements
+
+- macOS
+- Internet connection
+- Sudo access
 
 ## Make your own
 If you want to make your own setup based on this one I recommend the following steps:
@@ -14,17 +72,14 @@ If you want to make your own setup based on this one I recommend the following s
 - Remove or update the ssh and gnupg roles with your own keys
 - Remove any other .vault file and the task using it. This is encrypted data which is unusable without the password.
 
+## Installation steps on a brand new MacOS setup
 
-# Automation using Ansible
-This dotfiles setup uses Ansible, so the process is automated. Just make `bootstrap.sh` executable and run it.
-
-Install the **Xcode Command Line Tools**
-
+### 1. Install the **Xcode Command Line Tools**
 ```bash
 xcode-select --install
 ```
 
-## Clone/download the repository
+### 2. Clone/download the repository
 Clone the repository and hide it in Finder with `chflags`
 
 ```bash
@@ -34,7 +89,7 @@ chflags hidden dotfiles
 cd ~/dotfiles
 ```
 
-## Run bootstrap.sh
+### 3. Run bootstrap.sh
 ```bash
 chmod +x bootstrap.sh
 ./bootstrap.sh
@@ -48,22 +103,16 @@ compaudit | xargs chmod g-w
 compaudit | xargs chmod o-w
 ```
 
+## Additional steps/information
 
-# Additional steps/information
-
-## SSH keys
-Private SSH keys are stored encrypted and installed with ansible.
-
+### SSH keys
 If the public **SSH-key** has been added to [GitHub](https://github.com/settings/ssh), the connection can be tested
 
 ```bash
 ssh -T git@github.com
 ```
 
-## GPG keys, Github
-GPG keys are encrypted with ansible-vault and installed with ansible. The use of GPG keys to verify the user is set in the git_config playbook.
-
-## Ruby and Gems
+### Ruby and Gems
 
 Install latest Ruby version and `colorls` for colorful `ls` with icons. Aliased to `lc` and `lcc`
 
@@ -78,8 +127,7 @@ Restart your terminal before installing gems
 gem install colorls
 ```
 
-
-## Node
+### Node
 Setup Node with nvm
 
 ```bash
@@ -87,8 +135,7 @@ mkdir ~/.nvm
 nvm install --lts
 ```
 
-
-## Python
+### Python
 With `pyenv` installed, get the latest version of python
 
 ```bash
@@ -97,43 +144,6 @@ PYTHON_CONFIGURE_OPTS="--enable-framework"
 pyenv install $PYTHON_LATEST
 pyenv global $PYTHON_LATEST
 pip install --upgrade pip
-```
-
-
-## openpyn - NordVPN cli
-
-With wget, openvpn and python3 installed using pyenv, install [openpyn](https://github.com/jotyGill/openpyn-nordvpn)
-```bash
-pip install openpyn
-sudo brew services start openvpn
-sudo openpyn --init
-```
-
-
-## Private Config files
-
-~~I keep some config files, shell aliases and application preferences in a [private branch]~~(https://24ways.org/2013/keeping-parts-of-your-codebase-private-on-github/) of this repository and copy them into their designated destination after installing the apps. 
-These files might contain Software Licenses, network addresses and other private data.
-Since March 2026 this has been moved to using ansible-vault.
-
-
-## Other Software
-Here's a list of other software that doesn't have a homebrew package
-```
-Adobe Lightroom
-Adobe Photoshop
-Canon EOS Utility
-```
-
-## Stay up to date
-
-Run these commands regularly to stay up to date
-
-```bash
-# Brew upgrade, update and cleanup
-bubu
-# npm update
-npmu
 ```
 
 ## Credits
