@@ -86,8 +86,8 @@ dkrm() { docker rm -f $(docker ps -aq) }
 # Streams - Might require VPN
 alias tv='alias | grep "[s]treamlink" | grep -o ".*=" | cut -d= -f1'
 alias stopvideo='kill $(ps aux | grep "[V]LC" | grep -v "[V]LC -Idummy" | awk '\''{print $2}'\'')'
-alias ruv='streamlink https://www.ruv.is/ruv best NUL &'
-alias ruv2='streamlink https://www.ruv.is/ruv2 best NUL &'
+alias ruv='streamlink https://www.ruv.is/sjonvarp/beint/ruv best NUL &'
+alias ruv2='streamlink https://www.ruv.is/sjonvarp/beint/ruv2 best NUL &'
 alias svt1='streamlink https://www.svtplay.se/kanaler/svt1 best NUL &'
 alias svt2='streamlink https://www.svtplay.se/kanaler/svt2 best NUL &'
 alias dr1='streamlink https://www.dr.dk/tv/live/dr1 best NUL &'
