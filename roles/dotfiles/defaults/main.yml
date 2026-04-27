@@ -14,5 +14,5 @@ dotfiles_links:
   - src: "{{ dotfiles_repo_root }}/home/.p10k.zsh"
     dest: "{{ ansible_facts['user_dir'] }}/.p10k.zsh"
 
-  # - src: "{{ dotfiles_repo_root }}/tmux/.tmux.conf"
-  #   dest: "{{ ansible_facts['user_dir'] }}/.tmux.conf"
+  - src: "{{ dotfiles_repo_root }}/home/.tmux.conf"
+    dest: "{{ ansible_facts['user_dir'] }}/.tmux.conf"
