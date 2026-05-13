@@ -1,0 +1,27 @@
+---
+- name: Ensure ~/.config exists
+  ansible.builtin.file:
+    path: "{{ ansible_facts['user_dir'] }}/.config"
+    state: directory
+    owner: "{{ ansible_facts['user_id'] }}"
+    mode: "0755"
+
+- name: Check if Neovim config already exists
+  ansible.builtin.stat:
+    path: "{{ neovim_config_path }}"
+  register: neovim_config_dir
+
+- name: Install LazyVim starter config
+  ansible.builtin.git:
+    repo: "{{ neovim_lazyvim_repo }}"
+    dest: "{{ neovim_config_path }}"
+    depth: 1
+  when: not neovim_config_dir.stat.exists
+
+- name: Remove starter git metadata
+  ansible.builtin.file:
+    path: "{{ neovim_config_path }}/.git"
+    state: absent
+  when:
+    - neovim_remove_git_metadata
+    - not neovim_config_dir.stat.exists

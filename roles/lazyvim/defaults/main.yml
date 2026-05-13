@@ -1,0 +1,4 @@
+---
+neovim_lazyvim_repo: "https://github.com/LazyVim/starter"
+neovim_config_path: "{{ ansible_facts['user_dir'] }}/.config/nvim"
+neovim_remove_git_metadata: true
