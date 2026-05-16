@@ -78,3 +78,69 @@ alias urlencode='python -c "import sys, urllib.parse as ul; print (ul.quote_plus
 ascii() {
     echo "'$1'" | xargs python -c "import sys, string; s=''.join(sys.argv[1:]); print(''.join(list(filter(lambda x: x in string.printable, s))))"
 }
+
+# Text manipulation functions
+
+# Delete line
+dl() {
+    [[ $# -ne 2 ]] && {
+        echo "Usage: delline <line-number> <file>"
+        return 1
+    }
+    sed -i '' "${1}d" "$2"
+}
+
+# Delete range of lines
+dlr() {
+    [[ $# -ne 3 ]] && {
+        echo "Usage: delline <start-line> <end-line> <file>"
+        return 1
+    }
+    sed -i '' "${1},${2}d" "$3"
+}
+
+# Replace text
+repl() {
+    [[ $# -ne 3 ]] && {
+        echo "Usage: repl <search-text> <replace-text> <file>"
+        return 1
+    }
+    sed -i '' "s/$1/$2/g" "$3"
+}
+
+# Replace first match per line
+repl1() {
+    [[ $# -ne 3 ]] && {
+        echo "Usage: repl1 <search-text> <replace-text> <file>"
+        return 1
+    }
+    sed -i '' "s/$1/$2/" "$3"
+}
+
+# Insert line before
+insertbefore() {
+    [[ $# -ne 3 ]] && {
+        echo "Usage: insertbefore <line-number> <text> <file>"
+        return 1
+    }
+    sed -i '' "${1}i$2" "$3"
+}
+
+# Find line number with matches
+findline() {
+    [[ $# -ne 2 ]] && {
+        echo "Usage: findline <search-text> <file>"
+        return 1
+    }
+    grep -n "$1" "$2"
+}
+
+# Backup file and run sed command
+sedi() {
+    [[ $# -ne 2 ]] && {
+        echo "Usage: sedi <sed-command> <file>"
+        return 1
+    }
+    cp "$2" "$2.bak"
+    sed -i '' "$1" "$2"
+}
