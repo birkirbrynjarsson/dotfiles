@@ -7,6 +7,7 @@ My personal macOS configuration and dotfiles, managed with Ansible.
 This repository automates the setup and configuration of a macOS system using Ansible. It manages:
 
 - **Homebrew** - Package management and application installation
+- **Oh My Zsh** - Zsh framework installation
 - **Neovim** - LazyVim starter configuration
 - **Git** - Global Git configuration and SSH keys
 - **GPG** - GNU Privacy Guard setup and key management
@@ -44,6 +45,7 @@ Run specific roles with tags:
 
 ```bash
 ansible-playbook playbook.yml --tags homebrew -K
+ansible-playbook playbook.yml --tags oh-my-zsh
 ansible-playbook playbook.yml --tags git
 ansible-playbook playbook.yml --tags ssh --ask-vault-pass
 ansible-playbook playbook.yml --tags dotfiles --ask-vault-pass

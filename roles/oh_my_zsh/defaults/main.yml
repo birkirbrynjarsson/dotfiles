@@ -1,0 +1,4 @@
+---
+oh_my_zsh_repo: "https://github.com/ohmyzsh/ohmyzsh.git"
+oh_my_zsh_version: "master"
+oh_my_zsh_install_dir: "{{ ansible_facts['user_dir'] }}/.oh-my-zsh"

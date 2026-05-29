@@ -56,6 +56,9 @@ PATH="$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools"
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 
+# libpq
+export PATH="$(brew --prefix libpq)/bin:$PATH"
+
 # Dapr runtime
 PATH="$PATH:$HOME/.dapr/bin"
 
