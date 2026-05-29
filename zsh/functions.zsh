@@ -79,6 +79,64 @@ ascii() {
     echo "'$1'" | xargs python -c "import sys, string; s=''.join(sys.argv[1:]); print(''.join(list(filter(lambda x: x in string.printable, s))))"
 }
 
+# Add a line to the Brewfile and re-sort it by section (tap > brew > cask > mas > vscode)
+# Usage: brewfile_add brew neovim
+#        brewfile_add 'vscode "vscodevim.vim"'
+brewfile_add() {
+    local brewfile="${HOME}/dotfiles/roles/homebrew/files/Brewfile"
+
+    # Accept 'brew name' or 'brew "name"' forms
+    local line
+    if [[ $# -ge 2 && $* != *'"'* ]]; then
+        line="${1} \"${2}\""
+    else
+        line="${*}"
+    fi
+
+    if grep -qxF "${line}" "${brewfile}"; then
+        echo "Already in Brewfile: ${line}"
+        return 0
+    fi
+
+    printf '%s\n' "${line}" >> "${brewfile}"
+
+    python3 - "${brewfile}" << 'EOF'
+import sys
+
+path = sys.argv[1]
+order = ['tap', 'brew', 'cask', 'mas', 'vscode']
+
+with open(path) as f:
+    raw = [l.rstrip('\n') for l in f]
+
+sections = {k: [] for k in order}
+other = []
+
+for line in raw:
+    if not line.strip():
+        continue
+    for key in order:
+        if line.startswith(key + ' ') or line.startswith(key + '"'):
+            sections[key].append(line)
+            break
+    else:
+        other.append(line)
+
+for key in order:
+    sections[key].sort(key=str.lower)
+
+out = []
+for key in order:
+    out.extend(sections[key])
+out.extend(other)
+
+with open(path, 'w') as f:
+    f.write('\n'.join(out) + '\n')
+EOF
+
+    echo "Added to Brewfile: ${line}"
+}
+
 # Text manipulation functions
 
 # Delete line
