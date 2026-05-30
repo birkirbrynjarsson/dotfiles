@@ -138,6 +138,6 @@ vscode "vscode-icons-team.vscode-icons"
 vscode "vscodevim.vim"
 # mas "GarageBand", id: 682658836
 # mas "iMovie", id: 408981434
-# mas "Magnet", id: 441258766
-# mas "Spark", id: 1176895641
+mas "Magnet", id: 441258766
+mas "Spark", id: 1176895641
 # mas "Xcode", id: 497799835
