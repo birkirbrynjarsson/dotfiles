@@ -137,6 +137,31 @@ EOF
     echo "Added to Brewfile: ${line}"
 }
 
+# Remove a line from the Brewfile
+# Usage: brewfile_remove brew neovim
+#        brewfile_remove 'vscode "vscodevim.vim"'
+brewfile_remove() {
+    local brewfile="${HOME}/dotfiles/roles/homebrew/files/Brewfile"
+
+    local line
+    if [[ $# -ge 2 && $* != *'"'* ]]; then
+        line="${1} \"${2}\""
+    else
+        line="${*}"
+    fi
+
+    if ! grep -qxF "${line}" "${brewfile}"; then
+        echo "Not found in Brewfile: ${line}"
+        return 1
+    fi
+
+    grep -vxF "${line}" "${brewfile}" > "${brewfile}.tmp" && mv "${brewfile}.tmp" "${brewfile}"
+    echo "Removed from Brewfile: ${line}"
+}
+
+alias badd='brewfile_add'
+alias brm='brewfile_remove'
+
 # Text manipulation functions
 
 # Delete line
