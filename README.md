@@ -109,7 +109,7 @@ If the public **SSH-key** has been added to [GitHub](https://github.com/settings
 ssh -T git@github.com
 ```
 
-### Ruby and Gems
+### Ruby
 
 Install latest Ruby version`
 
