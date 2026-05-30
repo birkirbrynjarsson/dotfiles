@@ -100,14 +100,6 @@ chmod +x bootstrap.sh
 ./bootstrap.sh
 ```
 
-### Caveats
-
-If you get the error 'compaudit insecure directories', then run the following:
-```bash
-compaudit | xargs chmod g-w
-compaudit | xargs chmod o-w
-```
-
 ## Additional steps/information
 
 ### SSH keys
@@ -119,17 +111,11 @@ ssh -T git@github.com
 
 ### Ruby and Gems
 
-Install latest Ruby version and `colorls` for colorful `ls` with icons. Aliased to `lc` and `lcc`
+Install latest Ruby version`
 
 ```bash
 rbenv install $(rbenv install -l | grep -v - | tail -1)
 rbenv global $(rbenv install -l | grep -v - | tail -1)
-```
-
-Restart your terminal before installing gems
-
-```bash
-gem install colorls
 ```
 
 ### Node
