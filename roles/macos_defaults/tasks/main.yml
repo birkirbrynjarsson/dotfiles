@@ -53,3 +53,8 @@
     - defaults write NSGlobalDomain AppleInterfaceStyle -string Dark
     - defaults write NSGlobalDomain com.apple.sound.beep.flash -int 1
   changed_when: true
+
+  name: Restart SystemUIServer
+  ansible.builtin.command: killall SystemUIServer
+  changed_when: true
+  failed_when: false
