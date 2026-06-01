@@ -45,6 +45,18 @@
   changed_when: true
   failed_when: false
 
+- name: Configure Mouse defaults
+  ansible.builtin.command: "{{ item }}"
+  loop:
+    - defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode -string TwoButton
+    - defaults write com.apple.AppleMultitouchMouse MouseButtonMode -string TwoButton
+  changed_when: true
+
+- name: Apply Mouse settings
+  ansible.builtin.command: /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+  changed_when: true
+  failed_when: false
+
 - name: Configure global macOS defaults
   ansible.builtin.command: "{{ item }}"
   loop:
