@@ -137,5 +137,9 @@ pyenv global $PYTHON_LATEST
 pip install --upgrade pip
 ```
 
+### Keyboard
+
+Remap the **Caps Lock** key to **Control** manually in System Settings → Keyboard → Keyboard Shortcuts → Modifier Keys (this can't be set reliably via `defaults write` since it's tied to each Mac's specific keyboard hardware ID)
+
 ## Credits
 Thanks to the [dotfiles community](http://dotfiles.github.io/) and the creators/contributors there. Many of the aliases, settings etc. are borrowed from the repositories found there.
