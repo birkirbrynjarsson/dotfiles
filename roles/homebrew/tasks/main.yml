@@ -20,6 +20,21 @@
   ansible.builtin.command: brew update
   changed_when: false
 
+- name: Read taps from Brewfile
+  ansible.builtin.shell: |
+    set -o pipefail
+    grep -E '^tap "' "{{ role_path }}/files/Brewfile" | sed -E 's/^tap "([^"]+)".*/\1/'
+  args:
+    executable: /bin/bash
+  register: brewfile_taps
+  changed_when: false
+
+- name: Trust taps used in Brewfile
+  ansible.builtin.command: "brew trust --tap {{ item }}"
+  loop: "{{ brewfile_taps.stdout_lines }}"
+  register: brew_trust
+  changed_when: "'Already trusted' not in brew_trust.stdout"
+
 - name: Install packages from Brewfile
   ansible.builtin.command: brew bundle --file="{{ role_path }}/files/Brewfile"
   register: brew_bundle
