@@ -62,4 +62,7 @@ export PATH="$(brew --prefix libpq)/bin:$PATH"
 # Dapr runtime
 PATH="$PATH:$HOME/.dapr/bin"
 
+# Add local bin to PATH for e.g. claude
+PATH="$HOME/.local/bin:$PATH"
+
 export PATH
