@@ -66,7 +66,7 @@
     - defaults write NSGlobalDomain com.apple.sound.beep.flash -int 1
   changed_when: true
 
-  name: Restart SystemUIServer
+- name: Restart SystemUIServer
   ansible.builtin.command: killall SystemUIServer
   changed_when: true
   failed_when: false

@@ -1,0 +1,12 @@
+---
+# Claude CLI (Claude Code)
+claude_cli_install_url: "https://claude.ai/install.sh"
+claude_cli_bin: "{{ ansible_facts['user_dir'] }}/.local/bin/claude"
+
+# Additional misc tools installed via shell scripts.
+# Each item: name (for messages), bin (idempotency check), url (installer script).
+# Example:
+#   - name: starship
+#     bin: "{{ ansible_facts['user_dir'] }}/.local/bin/starship"
+#     url: "https://starship.rs/install.sh"
+misc_tools: []

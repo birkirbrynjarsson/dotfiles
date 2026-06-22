@@ -1,0 +1,32 @@
+---
+# First task: install the Claude CLI (Claude Code).
+- name: Check if Claude CLI is already installed
+  ansible.builtin.stat:
+    path: "{{ claude_cli_bin }}"
+  register: claude_cli_stat
+
+- name: Install Claude CLI
+  ansible.builtin.shell:
+    cmd: "set -o pipefail && curl -fsSL {{ claude_cli_install_url }} | bash"
+    executable: /bin/bash
+    creates: "{{ claude_cli_bin }}"
+  when: not claude_cli_stat.stat.exists
+
+# Additional misc tools installed from shell scripts (see defaults/main.yml).
+- name: Check if misc tools are already installed
+  ansible.builtin.stat:
+    path: "{{ item.bin }}"
+  register: misc_tools_stat
+  loop: "{{ misc_tools }}"
+  loop_control:
+    label: "{{ item.name }}"
+
+- name: Install misc tools
+  ansible.builtin.shell:
+    cmd: "set -o pipefail && curl -fsSL {{ item.item.url }} | bash"
+    executable: /bin/bash
+    creates: "{{ item.item.bin }}"
+  loop: "{{ misc_tools_stat.results }}"
+  loop_control:
+    label: "{{ item.item.name }}"
+  when: not item.stat.exists

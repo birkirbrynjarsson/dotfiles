@@ -14,6 +14,7 @@ This repository automates the setup and configuration of a macOS system using An
 - **SSH** - SSH configuration and key management
 - **macOS Defaults** - System preferences and settings
 - **Dotfiles** - Shell configuration files (.zshrc, .vimrc, etc.)
+- **Tools** - Misc tools and software installed via shell scripts (e.g. Claude CLI)
 
 ## Quick Start
 
@@ -50,6 +51,7 @@ ansible-playbook playbook.yml --tags git
 ansible-playbook playbook.yml --tags ssh --ask-vault-pass
 ansible-playbook playbook.yml --tags dotfiles --ask-vault-pass
 ansible-playbook playbook.yml --tags lazyvim
+ansible-playbook playbook.yml --tags tools
 ```
 
 Use the ansible flags `-K` to become sudo and `--ask-vault-pass` to decrypt the vaulted files used in some roles.

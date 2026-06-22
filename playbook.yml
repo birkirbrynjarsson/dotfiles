@@ -21,3 +21,5 @@
       tags: ssh
     - role: gnupg
       tags: gnupg
+    - role: tools
+      tags: tools
