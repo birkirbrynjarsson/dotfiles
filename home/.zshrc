@@ -91,6 +91,7 @@ plugins=(
   web-search
   yarn
   z
+  git zsh-doppler
 )
 
 zstyle ':omz:plugins:yarn' aliases no

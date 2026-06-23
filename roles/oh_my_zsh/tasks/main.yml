@@ -11,3 +11,13 @@
     version: "{{ oh_my_zsh_version }}"
     depth: 1
   when: not oh_my_zsh_dir.stat.exists
+
+- name: Install Oh My Zsh custom plugins
+  ansible.builtin.git:
+    repo: "{{ item.repo }}"
+    dest: "{{ oh_my_zsh_install_dir }}/custom/plugins/{{ item.name }}"
+    version: "{{ item.version | default('HEAD') }}"
+    depth: 1
+  loop: "{{ oh_my_zsh_custom_plugins }}"
+  loop_control:
+    label: "{{ item.name }}"
